@@ -1,0 +1,155 @@
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import { Button } from "@/components/ui/button";
+import { Link } from "wouter";
+import { CheckCircle2, Shield, Zap, BarChart3, TrendingUp, ArrowRight, Star } from "lucide-react";
+
+const LOGO_URL = "/logo.webp";
+
+const FEATURES = [
+  "Multi-pair gold and forex trading",
+  "Adaptive volatility engine",
+  "Dynamic lot sizing with equity protection",
+  "Hidden stop-loss and take-profit levels",
+  "News filter with economic calendar integration",
+  "Session-aware trading (London, NY, Asian)",
+  "Trailing stop with breakeven logic",
+  "Compatible with MT4 and MT5",
+  "Prop firm safe mode",
+  "Built-in drawdown guardian",
+];
+
+const SPECS = [
+  { label: "Platform", value: "MetaTrader 4 / MetaTrader 5" },
+  { label: "Recommended Pairs", value: "XAUUSD, EURUSD, GBPUSD, USDJPY" },
+  { label: "Minimum Deposit", value: "$500 (recommended $1,000+)" },
+  { label: "Timeframe", value: "M15 / H1 (configurable)" },
+  { label: "Leverage", value: "1:100 or higher recommended" },
+  { label: "Account Type", value: "ECN / Raw Spread preferred" },
+  { label: "VPS", value: "Recommended for 24/5 operation" },
+];
+
+export default function AureusPrime() {
+  return (
+    <div className="min-h-screen bg-background text-foreground">
+      <Navbar />
+
+      {/* Hero */}
+      <section className="pt-28 pb-16">
+        <div className="container">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-primary/30 bg-primary/5 mb-6">
+                <Zap size={14} className="text-primary" />
+                <span className="text-xs font-medium text-primary">Flagship Expert Advisor</span>
+              </div>
+              <h1 className="text-4xl md:text-5xl font-bold font-['Playfair_Display'] mb-6">
+                <span className="gold-text">Aureus Prime</span> EA
+              </h1>
+              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+                The institutional-grade Expert Advisor built for serious traders. Aureus Prime combines adaptive volatility analysis, dynamic position sizing, and prop-firm-safe risk management into a single, battle-tested trading engine.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link href="/pricing">
+                  <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 h-12">
+                    Get Aureus Prime <ArrowRight size={18} className="ml-2" />
+                  </Button>
+                </Link>
+                <Link href="/docs">
+                  <Button variant="outline" size="lg" className="px-8 h-12 border-border">
+                    View Documentation
+                  </Button>
+                </Link>
+              </div>
+            </div>
+            <div className="flex justify-center">
+              <div className="relative">
+                <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full" />
+                <img src={LOGO_URL} alt="Aureus Prime EA" className="relative w-64 h-64 md:w-80 md:h-80 rounded-2xl shadow-2xl" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features */}
+      <section className="py-16 border-t border-border/50">
+        <div className="container">
+          <h2 className="text-3xl font-bold font-['Playfair_Display'] mb-8 text-center">
+            Built for <span className="gold-text">Performance</span>
+          </h2>
+          <div className="grid md:grid-cols-2 gap-4 max-w-3xl mx-auto">
+            {FEATURES.map((f, i) => (
+              <div key={i} className="flex items-center gap-3 p-3 glass-card rounded-lg">
+                <CheckCircle2 size={18} className="text-primary shrink-0" />
+                <span className="text-sm">{f}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Specs */}
+      <section className="py-16 border-t border-border/50 bg-primary/[0.03]">
+        <div className="container max-w-3xl">
+          <h2 className="text-3xl font-bold font-['Playfair_Display'] mb-8 text-center">
+            Technical <span className="gold-text">Specifications</span>
+          </h2>
+          <div className="glass-card rounded-xl overflow-hidden">
+            {SPECS.map((s, i) => (
+              <div key={i} className={`flex items-center justify-between p-4 ${i < SPECS.length - 1 ? "border-b border-border/50" : ""}`}>
+                <span className="text-sm text-muted-foreground">{s.label}</span>
+                <span className="text-sm font-medium">{s.value}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Performance */}
+      <section className="py-16 border-t border-border/50">
+        <div className="container">
+          <h2 className="text-3xl font-bold font-['Playfair_Display'] mb-8 text-center">
+            Proven <span className="gold-text">Track Record</span>
+          </h2>
+          <div className="grid md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+            {[
+              { label: "Avg Monthly Return", value: "8.2%", icon: TrendingUp },
+              { label: "Max Drawdown", value: "12.4%", icon: Shield },
+              { label: "Profit Factor", value: "2.31", icon: BarChart3 },
+              { label: "Win Rate", value: "68.5%", icon: Star },
+            ].map((m, i) => (
+              <div key={i} className="glass-card rounded-xl p-6 text-center">
+                <m.icon size={24} className="text-primary mx-auto mb-3" />
+                <div className="text-2xl font-bold gold-text mb-1">{m.value}</div>
+                <div className="text-xs text-muted-foreground">{m.label}</div>
+              </div>
+            ))}
+          </div>
+          <p className="text-center text-xs text-muted-foreground mt-6 max-w-xl mx-auto">
+            Past performance is not indicative of future results. Trading involves substantial risk of loss. These figures are based on backtested and live demo results.
+          </p>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-16 border-t border-border/50 bg-primary/[0.03]">
+        <div className="container text-center">
+          <h2 className="text-3xl font-bold font-['Playfair_Display'] mb-4">
+            Ready to Trade with <span className="gold-text">Aureus Prime</span>?
+          </h2>
+          <p className="text-muted-foreground max-w-xl mx-auto mb-8">
+            Subscribe to any FoldForge plan to receive your Aureus Prime EA license key and full access to the testing studio.
+          </p>
+          <Link href="/pricing">
+            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 h-12 text-base font-semibold">
+              View Plans <ArrowRight size={18} className="ml-2" />
+            </Button>
+          </Link>
+        </div>
+      </section>
+
+      <Footer />
+    </div>
+  );
+}

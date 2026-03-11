@@ -1,0 +1,13 @@
+{
+  "query": "SELECT COUNT(*) as total FROM symbol_reference;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user JMv9pwf3CL9jWV7.root --database coZ8Zbn7xWkUMjdjPa3EVo --execute SELECT COUNT(*) as total FROM symbol_reference;",
+  "rows": [
+    {
+      "total": "162"
+    }
+  ],
+  "messages": [],
+  "stdout": "total\n162\n",
+  "stderr": "",
+  "execution_time_ms": 53
+}

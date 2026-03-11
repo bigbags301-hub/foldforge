@@ -1,0 +1,34 @@
+{
+  "query": "SELECT category, COUNT(*) as cnt FROM symbol_reference GROUP BY category ORDER BY category;",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway04.us-east-1.prod.aws.tidbcloud.com --port 4000 --user JMv9pwf3CL9jWV7.root --database coZ8Zbn7xWkUMjdjPa3EVo --execute SELECT category, COUNT(*) as cnt FROM symbol_reference GROUP BY category ORDER BY category;",
+  "rows": [
+    {
+      "category": "forex",
+      "cnt": "68"
+    },
+    {
+      "category": "metals",
+      "cnt": "12"
+    },
+    {
+      "category": "indices",
+      "cnt": "25"
+    },
+    {
+      "category": "crypto",
+      "cnt": "25"
+    },
+    {
+      "category": "commodities",
+      "cnt": "20"
+    },
+    {
+      "category": "bonds",
+      "cnt": "12"
+    }
+  ],
+  "messages": [],
+  "stdout": "category\tcnt\nforex\t68\nmetals\t12\nindices\t25\ncrypto\t25\ncommodities\t20\nbonds\t12\n",
+  "stderr": "",
+  "execution_time_ms": 52
+}
