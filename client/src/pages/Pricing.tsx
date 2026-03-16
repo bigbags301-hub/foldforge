@@ -14,19 +14,19 @@ const STRIPE_LINKS = {
 const PLANS = [
   {
     name: "Starter", price: 19, desc: "For individual traders getting started with EA testing.",
-    features: ["1 EA License Key", "Reference Data Access (172+ symbols)", "5 Studio Runs / Month", "Basic Performance Metrics", "Email Support", "Community Forum Access"],
+    features: ["1 EA License Key", "Reference Data Access (172+ symbols)", "5 Studio Runs / Month", "Advanced Performance Metrics", "Email Support", "Community Forum Access", "7-Day Free Trial"],
     stripeLink: STRIPE_LINKS.starter,
     activations: "1 device",
   },
   {
     name: "Pro", price: 39, popular: true, desc: "For serious traders who need broker-specific data and unlimited testing.",
-    features: ["5 EA License Keys", "Full Broker Data Sync (MT4/MT5)", "Unlimited Studio Runs", "Advanced Analytics & Reports", "Monte Carlo Simulations", "Walk-Forward Analysis", "Priority Support", "Funded Account Guardian"],
+    features: ["5 EA License Keys", "Full Broker Data Sync (MT4/MT5)", "Unlimited Studio Runs", "Advanced Analytics & Reports", "Monte Carlo Simulations", "Walk-Forward Analysis", "Priority Support", "Funded Account Guardian", "7-Day Free Trial"],
     stripeLink: STRIPE_LINKS.pro,
     activations: "5 devices",
   },
   {
     name: "Funded", price: 79, desc: "For prop firm traders and fund managers who need everything.",
-    features: ["25 EA License Keys", "Full Broker Data Pipeline", "White-Label PDF Reports", "Parameter Sweep Optimization", "Dedicated Account Manager", "API Access", "Custom Integrations", "Prop Firm Dashboard", "Phone Support"],
+    features: ["25 EA License Keys", "Full Broker Data Pipeline", "White-Label PDF Reports", "Parameter Sweep Optimization", "Dedicated Account Manager", "API Access", "Custom Integrations", "Prop Firm Dashboard", "Phone Support", "7-Day Free Trial"],
     stripeLink: STRIPE_LINKS.funded,
     activations: "25 devices",
   },
