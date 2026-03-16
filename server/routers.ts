@@ -8,6 +8,7 @@ import { storageGet } from "./storage";
 import { realTestingEngine } from "./realTestingEngine";
 import { workerPool } from "./workerPool";
 import { studioCache } from "./studioCache";
+import * as testingEngine from "./testingEngine";
 
 export const appRouter = router({
   system: systemRouter,

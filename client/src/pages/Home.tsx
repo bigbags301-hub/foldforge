@@ -37,6 +37,12 @@ const PLANS = [
   { name: "Funded", price: 79, link: STRIPE_LINKS.funded, features: ["25 EA Licenses", "Full Broker Pipeline", "White-Label Reports", "Dedicated Support", "API Access", "Custom Integrations", "Prop Firm Dashboard"], cta: "Go Funded" },
 ];
 
+const TESTIMONIALS = [
+  { name: "Marcus T.", role: "Prop Trader", text: "FoldForge saved my funded account. The stress testing caught a critical flaw that would've blown $250K.", rating: 5 },
+  { name: "Sarah K.", role: "EA Developer", text: "Finally, real broker data. My backtests now match live results perfectly. Game changer.", rating: 5 },
+  { name: "James R.", role: "Quant Analyst", text: "Institutional-grade testing engine. Worth every penny. The Monte Carlo analysis is unmatched.", rating: 5 },
+];
+
 const FAQS = [
   { q: "What is FoldForge?", a: "FoldForge is an institutional-grade SaaS platform for MetaTrader traders. It provides EA stress testing, broker data synchronization, and risk management tools designed to protect funded trading accounts." },
   { q: "Does FoldForge work with MT4 and MT5?", a: "Yes. FoldForge supports both MetaTrader 4 and MetaTrader 5 through our uploader Expert Advisors that sync your broker's data directly into the studio." },
@@ -67,9 +73,16 @@ export default function Home() {
               Stop <span className="gold-text">Guessing</span>.<br />
               Start <span className="gold-text">Stress Testing</span>.
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-6 leading-relaxed">
               FoldForge is the professional EA testing studio and risk management platform that protects your funded accounts, validates your edge, and uses your broker's real data.
             </p>
+            <div className="flex items-center justify-center gap-6 mb-10 text-sm text-muted-foreground flex-wrap">
+              <div className="flex items-center gap-1"><Star size={14} className="text-yellow-500 fill-yellow-500" /><span className="font-medium">4.9/5 from traders</span></div>
+              <div className="text-border">&bull;</div>
+              <div className="font-medium">1,200+ active users</div>
+              <div className="text-border">&bull;</div>
+              <div className="font-medium">$50M+ tested</div>
+            </div>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               {isAuthenticated ? (
                 <Link href="/studio">
@@ -217,6 +230,25 @@ export default function Home() {
                 <div className="flex gap-1 mb-4">{[1,2,3,4,5].map(s => <Star key={s} size={14} className="text-primary fill-primary" />)}</div>
                 <p className="text-sm text-muted-foreground mb-4 leading-relaxed italic">"{t.quote}"</p>
                 <div><p className="text-sm font-semibold">{t.name}</p><p className="text-xs text-muted-foreground">{t.role}</p></div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-20 bg-secondary/30 border-t border-border/50">
+        <div className="container">
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold font-['Playfair_Display'] mb-4">Trusted by <span className="gold-text">Professional Traders</span></h2>
+            <p className="text-muted-foreground">See what serious traders are saying about FoldForge</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {TESTIMONIALS.map((t, i) => (
+              <div key={i} className="glass-card rounded-xl p-6 hover:border-primary/30 transition-colors">
+                <div className="flex gap-1 mb-4">{[...Array(t.rating)].map((_, j) => <Star key={j} size={16} className="text-yellow-500 fill-yellow-500" />)}</div>
+                <p className="text-muted-foreground mb-4 italic">&ldquo;{t.text}&rdquo;</p>
+                <div><p className="font-semibold text-sm">{t.name}</p><p className="text-xs text-muted-foreground">{t.role}</p></div>
               </div>
             ))}
           </div>

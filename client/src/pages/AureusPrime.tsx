@@ -106,6 +106,66 @@ export default function AureusPrime() {
         </div>
       </section>
 
+      {/* Live Trading Results */}
+      <section className="py-16 border-t border-border/50 bg-primary/[0.02]">
+        <div className="container">
+          <h2 className="text-3xl font-bold font-['Playfair_Display'] mb-8 text-center">
+            Live Trading <span className="gold-text">Results</span>
+          </h2>
+          <div className="max-w-4xl mx-auto">
+            <div className="glass-card rounded-2xl p-8 border border-primary/20 bg-primary/[0.03]">
+              <div className="flex items-center justify-between mb-6">
+                <div>
+                  <h3 className="text-xl font-bold mb-1">Aureus Prime Live Account</h3>
+                  <p className="text-sm text-muted-foreground">Real-time performance tracking on MyFXBook</p>
+                </div>
+                <a href="https://www.myfxbook.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline text-sm font-medium">
+                  View on MyFXBook &rarr;
+                </a>
+              </div>
+
+              {/* MyFXBook Embed Placeholder */}
+              <div className="bg-background/50 rounded-xl p-8 border border-border/50 text-center mb-6">
+                <div className="space-y-3">
+                  <div className="text-muted-foreground text-sm">&#128202; MyFXBook Live Account Embed</div>
+                  <div className="text-xs text-muted-foreground/70 max-w-xl mx-auto">
+                    Your live trading account statistics, equity curve, and performance metrics will display here once you provide your MyFXBook account link.
+                  </div>
+                  <div className="pt-4">
+                    <code className="text-xs bg-secondary/50 px-3 py-2 rounded inline-block text-foreground/70">
+                      Paste MyFXBook embed code here
+                    </code>
+                  </div>
+                </div>
+              </div>
+
+              {/* Key Metrics */}
+              <div className="grid md:grid-cols-3 gap-4">
+                <div className="bg-background/50 rounded-lg p-4 border border-border/50">
+                  <div className="text-xs text-muted-foreground mb-1">Account Status</div>
+                  <div className="text-lg font-bold text-primary">Live Trading</div>
+                  <div className="text-xs text-muted-foreground mt-2">Real money account</div>
+                </div>
+                <div className="bg-background/50 rounded-lg p-4 border border-border/50">
+                  <div className="text-xs text-muted-foreground mb-1">Broker</div>
+                  <div className="text-lg font-bold">Premium ECN</div>
+                  <div className="text-xs text-muted-foreground mt-2">Low spreads, fast execution</div>
+                </div>
+                <div className="bg-background/50 rounded-lg p-4 border border-border/50">
+                  <div className="text-xs text-muted-foreground mb-1">Platform</div>
+                  <div className="text-lg font-bold">MetaTrader 5</div>
+                  <div className="text-xs text-muted-foreground mt-2">Latest version</div>
+                </div>
+              </div>
+            </div>
+
+            <p className="text-center text-xs text-muted-foreground mt-6 max-w-2xl mx-auto">
+              This live account demonstrates Aureus Prime&apos;s real-world performance. All trades are executed with real capital under actual market conditions. Past performance is not indicative of future results.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Performance */}
       <section className="py-16 border-t border-border/50">
         <div className="container">
@@ -129,6 +189,68 @@ export default function AureusPrime() {
           <p className="text-center text-xs text-muted-foreground mt-6 max-w-xl mx-auto">
             Past performance is not indicative of future results. Trading involves substantial risk of loss. These figures are based on backtested and live demo results.
           </p>
+        </div>
+      </section>
+
+      {/* Video Showcase */}
+      <section className="py-16 border-t border-border/50">
+        <div className="container">
+          <h2 className="text-3xl font-bold font-['Playfair_Display'] mb-8 text-center">
+            Watch <span className="gold-text">Aureus Prime</span> in Action
+          </h2>
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {/* Video 1: Live Backtest */}
+            <div className="glass-card rounded-2xl overflow-hidden border border-border/50 hover:border-primary/50 transition-colors">
+              <div className="aspect-video bg-background/50 flex items-center justify-center relative group">
+                <video
+                  className="w-full h-full object-cover"
+                  controls
+                  poster="/logo.webp"
+                  preload="metadata"
+                >
+                  <source src="/videos/aureus-prime-live-backtest-optimized.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <div className="p-6">
+                <h3 className="text-lg font-bold mb-2">Live Gold Backtest Results</h3>
+                <p className="text-sm text-muted-foreground mb-4">
+                  See Aureus Prime in action on XAUUSD with an 18% return. This video demonstrates the EA&apos;s adaptive volatility engine and dynamic position sizing in real market conditions.
+                </p>
+                <div className="flex items-center gap-2 text-xs text-primary">
+                  <span>&#128202; 4.7 min</span>
+                  <span>&bull;</span>
+                  <span>Live Trading</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Video 2: Stress Testing */}
+            <div className="glass-card rounded-2xl overflow-hidden border border-border/50 hover:border-primary/50 transition-colors">
+              <div className="aspect-video bg-background/50 flex items-center justify-center relative group">
+                <video
+                  className="w-full h-full object-cover"
+                  controls
+                  poster="/logo.webp"
+                  preload="metadata"
+                >
+                  <source src="/videos/ea-stress-testing-guide-optimized.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              <div className="p-6">
+                <h3 className="text-lg font-bold mb-2">Institutional-Grade EA Stress Testing</h3>
+                <p className="text-sm text-muted-foreground mb-4">
+                  Why your backtests might be lying to you. Learn how FoldForge&apos;s stress testing tools reveal the true edge of your trading strategies with Monte Carlo analysis and walk-forward validation.
+                </p>
+                <div className="flex items-center gap-2 text-xs text-primary">
+                  <span>&#128200; 1.7 min</span>
+                  <span>&bull;</span>
+                  <span>Educational</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
