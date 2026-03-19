@@ -112,55 +112,54 @@ export default function AureusPrime() {
           <h2 className="text-3xl font-bold font-['Playfair_Display'] mb-8 text-center">
             Live Trading <span className="gold-text">Results</span>
           </h2>
+
           <div className="max-w-4xl mx-auto">
-            <div className="glass-card rounded-2xl p-8 border border-primary/20 bg-primary/[0.03]">
-              <div className="flex items-center justify-between mb-6">
+            {/* Outer card */}
+            <div className="glass-card rounded-2xl border border-primary/20 bg-primary/[0.03] overflow-hidden">
+
+              {/* Card header */}
+              <div className="flex items-center justify-between px-8 pt-8 pb-5">
                 <div>
                   <h3 className="text-xl font-bold mb-1">Aureus Prime Live Account</h3>
                   <p className="text-sm text-muted-foreground">Real-time performance tracking on MyFXBook</p>
                 </div>
-                <a href="https://www.myfxbook.com/members/AureusPrimeEA/aureus-prime-ea/11972224" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline text-sm font-medium">
-                  View on MyFXBook &rarr;
-                </a>
-              </div>
-
-              {/* MyFXBook Live Widget */}
-              <div className="rounded-xl border border-primary/30 overflow-hidden mb-6 bg-background/80 backdrop-blur-sm">
-                {/* Widget header bar */}
-                <div className="flex items-center justify-between px-5 py-3 border-b border-primary/20 bg-primary/[0.04]">
-                  <div className="flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                    <span className="text-xs font-semibold text-primary tracking-wide uppercase">Live Account — Aureus Prime EA</span>
-                  </div>
+                <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
                   <a
                     href="https://www.myfxbook.com/members/AureusPrimeEA/aureus-prime-ea/11972224"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xs font-medium text-primary hover:underline"
+                    className="text-primary hover:underline text-sm font-medium"
                   >
-                    View Full Report on MyFXBook →
-                  </a>
-                </div>
-                {/* Actual MyFXBook widget — fills the full width */}
-                <div className="w-full flex items-center justify-center bg-background/60 p-0">
-                  <a
-                    href="https://www.myfxbook.com/members/AureusPrimeEA/aureus-prime-ea/11972224"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block w-full"
-                  >
-                    <img
-                      alt="Aureus Prime EA — MyFXBook Live Performance Widget"
-                      src="https://widget.myfxbook.com/widget/widget.png?accountOid=11972224&type=6"
-                      className="w-full h-auto object-contain block"
-                      style={{ minHeight: '320px', maxHeight: '520px' }}
-                    />
+                    View on MyFXBook &rarr;
                   </a>
                 </div>
               </div>
 
-              {/* Key Metrics */}
-              <div className="grid md:grid-cols-3 gap-4">
+              {/* MyFXBook widget — zero padding, fills full card width */}
+              <a
+                href="https://www.myfxbook.com/members/AureusPrimeEA/aureus-prime-ea/11972224"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full"
+                style={{ lineHeight: 0 }}
+              >
+                <img
+                  alt="Aureus Prime EA — MyFXBook Live Performance"
+                  src="https://widget.myfxbook.com/widget/widget.png?accountOid=11972224&type=6"
+                  className="w-full block"
+                  style={{
+                    height: 'auto',
+                    aspectRatio: '430 / 215',
+                    objectFit: 'fill',
+                    imageRendering: 'auto',
+                    display: 'block',
+                  }}
+                />
+              </a>
+
+              {/* Key Metrics — below widget, inside card */}
+              <div className="grid md:grid-cols-3 gap-4 px-8 py-6 border-t border-primary/10">
                 <div className="bg-background/50 rounded-lg p-4 border border-border/50">
                   <div className="text-xs text-muted-foreground mb-1">Account Status</div>
                   <div className="text-lg font-bold text-primary">Live Trading</div>
