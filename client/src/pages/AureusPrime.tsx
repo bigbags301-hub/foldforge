@@ -119,78 +119,43 @@ export default function AureusPrime() {
                   <h3 className="text-xl font-bold mb-1">Aureus Prime Live Account</h3>
                   <p className="text-sm text-muted-foreground">Real-time performance tracking on MyFXBook</p>
                 </div>
-                <a href="https://www.myfxbook.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline text-sm font-medium">
+                <a href="https://www.myfxbook.com/members/AureusPrimeEA/aureus-prime-ea/11972224" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline text-sm font-medium">
                   View on MyFXBook &rarr;
                 </a>
               </div>
 
-              {/* MyFXBook Embed Placeholder - Animated */}
-              <div className="bg-gradient-to-br from-primary/10 via-background/50 to-primary/5 rounded-xl p-8 border border-primary/30 text-center mb-6 relative overflow-hidden">
-                {/* Animated background elements */}
-                <div className="absolute inset-0 opacity-30">
-                  <div className="absolute top-0 right-0 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse" style={{animationDuration: '4s'}} />
-                  <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse" style={{animationDuration: '6s'}} />
+              {/* MyFXBook Live Widget */}
+              <div className="rounded-xl border border-primary/30 overflow-hidden mb-6 bg-background/80 backdrop-blur-sm">
+                {/* Widget header bar */}
+                <div className="flex items-center justify-between px-5 py-3 border-b border-primary/20 bg-primary/[0.04]">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                    <span className="text-xs font-semibold text-primary tracking-wide uppercase">Live Account — Aureus Prime EA</span>
+                  </div>
+                  <a
+                    href="https://www.myfxbook.com/members/AureusPrimeEA/aureus-prime-ea/11972224"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs font-medium text-primary hover:underline"
+                  >
+                    View Full Report on MyFXBook →
+                  </a>
                 </div>
-                <div className="relative z-10 space-y-4">
-                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/20 border border-primary/30 mb-4">
-                    <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-                    <span className="text-xs font-medium text-primary">Live Account Connected</span>
-                  </div>
-                  <h3 className="text-2xl font-bold mb-2">Aureus Prime Live Performance</h3>
-                  <p className="text-sm text-muted-foreground max-w-xl mx-auto mb-6">
-                    Real-time equity curve, drawdown analysis, and performance metrics from our live trading account on MyFXBook.
-                  </p>
-                  
-                  {/* Animated Chart Placeholder */}
-                  <div className="bg-background/80 rounded-lg p-6 border border-border/50 backdrop-blur-sm">
-                    <div className="space-y-4">
-                      {/* Simulated equity curve visualization */}
-                      <div className="h-48 flex items-end justify-between gap-1">
-                        {[45, 52, 48, 61, 58, 72, 68, 81, 79, 88, 85, 95, 92, 105, 102, 115].map((height, i) => (
-                          <div
-                            key={i}
-                            className="flex-1 bg-gradient-to-t from-primary/60 to-primary rounded-t transition-all duration-500 hover:from-primary/80 hover:to-primary/90"
-                            style={{
-                              height: `${height}%`,
-                              animation: `slideUp 0.8s ease-out ${i * 0.05}s both`,
-                            }}
-                          />
-                        ))}
-                      </div>
-                      <style>{`
-                        @keyframes slideUp {
-                          from { height: 0; opacity: 0; }
-                          to { height: var(--height); opacity: 1; }
-                        }
-                      `}</style>
-                      <div className="flex justify-between text-xs text-muted-foreground pt-2 border-t border-border/30">
-                        <span>Jan 2025</span>
-                        <span>Current</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Key Stats */}
-                  <div className="grid grid-cols-3 gap-3 pt-4">
-                    <div className="bg-background/60 rounded-lg p-3 border border-border/30">
-                      <div className="text-xs text-muted-foreground mb-1">Current Equity</div>
-                      <div className="text-lg font-bold text-primary">$125.4K</div>
-                    </div>
-                    <div className="bg-background/60 rounded-lg p-3 border border-border/30">
-                      <div className="text-xs text-muted-foreground mb-1">Monthly Return</div>
-                      <div className="text-lg font-bold text-green-500">+8.2%</div>
-                    </div>
-                    <div className="bg-background/60 rounded-lg p-3 border border-border/30">
-                      <div className="text-xs text-muted-foreground mb-1">Drawdown</div>
-                      <div className="text-lg font-bold text-orange-500">-12.4%</div>
-                    </div>
-                  </div>
-
-                  <p className="text-xs text-muted-foreground pt-4">
-                    <a href="https://www.myfxbook.com" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-medium">
-                      View full account on MyFXBook →
-                    </a>
-                  </p>
+                {/* Actual MyFXBook widget — fills the full width */}
+                <div className="w-full flex items-center justify-center bg-background/60 p-0">
+                  <a
+                    href="https://www.myfxbook.com/members/AureusPrimeEA/aureus-prime-ea/11972224"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block w-full"
+                  >
+                    <img
+                      alt="Aureus Prime EA — MyFXBook Live Performance Widget"
+                      src="https://widget.myfxbook.com/widget/widget.png?accountOid=11972224&type=6"
+                      className="w-full h-auto object-contain block"
+                      style={{ minHeight: '320px', maxHeight: '520px' }}
+                    />
+                  </a>
                 </div>
               </div>
 
