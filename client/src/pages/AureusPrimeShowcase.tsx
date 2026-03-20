@@ -31,6 +31,19 @@ const SHOWCASE_ITEMS = [
     ],
     badge: "Verified Live Trade",
   },
+  {
+    id: 2,
+    src: "/aureus-prime-trade-2.png",
+    alt: "Aureus Prime EA – Trade In Progress: XAUUSD SELL, +8,240 Points P&L, 0.09% Drawdown, Running",
+    title: "Trade In Progress — XAUUSD SELL",
+    subtitle: "Validated on FoldForge",
+    metrics: [
+      { label: "Current P&L", value: "+8,240 pts", color: "text-emerald-400" },
+      { label: "Drawdown", value: "0.09%", color: "text-primary" },
+      { label: "Status", value: "Running ●", color: "text-emerald-400" },
+    ],
+    badge: "Live — In Progress",
+  },
 ];
 
 const STATS = [
