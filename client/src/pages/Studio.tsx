@@ -493,104 +493,27 @@ function RunResultDetail({ run }: { run: any }) {
         )}
       </div>
 
-      {/* Advanced Risk Metrics */}
-      <div className="grid md:grid-cols-4 gap-4">
-        <MetricCard icon={BarChart3} label="Sortino Ratio" value={(metrics.sortinoRatio ?? 0).toFixed(2)} positive={(metrics.sortinoRatio ?? 0) > 1} />
-        <MetricCard icon={TrendingUp} label="Calmar Ratio" value={(metrics.calmarRatio ?? 0).toFixed(2)} positive={(metrics.calmarRatio ?? 0) > 0.5} />
-        <MetricCard icon={AlertTriangle} label="VaR (95%)" value={`${(metrics.valueAtRisk95 ?? 0).toFixed(2)}%`} positive={false} />
-        <MetricCard icon={BarChart3} label="Ulcer Index" value={(metrics.ulcerIndex ?? 0).toFixed(2)} positive={(metrics.ulcerIndex ?? 0) < 10} />
-      </div>
-
-      {/* Streak Metrics */}
-      <div className="grid md:grid-cols-4 gap-4">
-        <MetricCard icon={TrendingUp} label="Payoff Ratio" value={(metrics.payoffRatio ?? 0).toFixed(2)} positive={(metrics.payoffRatio ?? 0) > 1} />
-        <MetricCard icon={TrendingUp} label="Expectancy" value={`$${(metrics.expectancy ?? 0).toFixed(2)}`} positive={(metrics.expectancy ?? 0) > 0} />
-        <MetricCard icon={CheckCircle2} label="Consecutive Wins" value={String(metrics.consecutiveWins ?? 0)} />
-        <MetricCard icon={TrendingDown} label="Consecutive Losses" value={String(metrics.consecutiveLosses ?? 0)} positive={false} />
-      </div>
-
-      {/* Return Distribution Analysis */}
-      {tradeDistribution.length > 0 && (
-        <Card className="bg-card border-border">
-          <CardHeader>
-            <CardTitle>Return Distribution Analysis</CardTitle>
-            <CardDescription>Skewness: {(metrics.profitSkewness ?? 0).toFixed(2)} | Kurtosis: {(metrics.profitKurtosis ?? 0).toFixed(2)}</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="h-64">
-              <ResponsiveContainer width="100%" height="100%">
-                <BarChart data={tradeDistribution}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#333" />
-                  <XAxis dataKey="range" stroke="#666" tick={{ fill: "#888", fontSize: 10 }} angle={-45} textAnchor="end" height={60} />
-                  <YAxis stroke="#666" tick={{ fill: "#888", fontSize: 11 }} />
-                  <Tooltip contentStyle={{ backgroundColor: "#1a1a2e", border: "1px solid #333", borderRadius: "8px", color: "#fff" }} />
-                  <Bar dataKey="count" fill="#10b981" radius={[4, 4, 0, 0]} />
-                </BarChart>
-              </ResponsiveContainer>
-            </div>
-          </CardContent>
-        </Card>
-      )}
-
-      {/* Underwater Plot */}
-      {equityCurve.length > 0 && (
-        <Card className="bg-card border-border">
-          <CardHeader>
-            <CardTitle>Underwater Plot</CardTitle>
-            <CardDescription>Continuous drawdown from peak equity</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="h-64">
-              <ResponsiveContainer width="100%" height="100%">
-                <AreaChart data={equityCurve}>
-                  <defs>
-                    <linearGradient id="underwaterGrad" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="5%" stopColor="#ef4444" stopOpacity={0.4} />
-                      <stop offset="95%" stopColor="#ef4444" stopOpacity={0} />
-                    </linearGradient>
-                  </defs>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#333" />
-                  <XAxis dataKey="trade" stroke="#666" tick={{ fill: "#888", fontSize: 11 }} />
-                  <YAxis stroke="#666" tick={{ fill: "#888", fontSize: 11 }} tickFormatter={(v: number) => `${v.toFixed(0)}%`} />
-                  <Tooltip
-                    contentStyle={{ backgroundColor: "#1a1a2e", border: "1px solid #333", borderRadius: "8px", color: "#fff" }}
-                    formatter={(value: number) => [`${value.toFixed(2)}%`, "Drawdown"]}
-                  />
-                  <Area type="monotone" dataKey="drawdown" stroke="#ef4444" fill="url(#underwaterGrad)" strokeWidth={2} dot={false} />
-                </AreaChart>
-              </ResponsiveContainer>
-            </div>
-          </CardContent>
-        </Card>
-      )}
-
-      {/* Comprehensive Stats Table */}
+      {/* Detailed Stats Table */}
       <Card className="bg-card border-border">
-        <CardHeader><CardTitle>Comprehensive Statistics</CardTitle></CardHeader>
+        <CardHeader><CardTitle>Detailed Statistics</CardTitle></CardHeader>
         <CardContent>
-          <div className="grid md:grid-cols-3 gap-x-8 gap-y-3">
+<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-2">
             {[
               ["Total Trades", metrics.totalTrades],
               ["Winning Trades", metrics.wins],
               ["Losing Trades", metrics.losses],
               ["Win Rate", `${(metrics.winRate ?? 0).toFixed(1)}%`],
-              ["Profitability", `${(metrics.profitability ?? 0).toFixed(1)}%`],
               ["Profit Factor", (metrics.profitFactor ?? 0).toFixed(2)],
               ["Net Profit", `$${(metrics.netProfit ?? 0).toFixed(2)}`],
               ["Avg Win", `$${(metrics.avgWin ?? 0).toFixed(2)}`],
               ["Avg Loss", `$${(metrics.avgLoss ?? 0).toFixed(2)}`],
               ["Max Drawdown", `${(metrics.maxDrawdownPercent ?? 0).toFixed(2)}%`],
-              ["Ulcer Index", (metrics.ulcerIndex ?? 0).toFixed(2)],
               ["Sharpe Ratio", (metrics.sharpeRatio ?? 0).toFixed(2)],
               ["Sortino Ratio", (metrics.sortinoRatio ?? 0).toFixed(2)],
               ["Calmar Ratio", (metrics.calmarRatio ?? 0).toFixed(2)],
-              ["Information Ratio", (metrics.informationRatio ?? 0).toFixed(2)],
               ["Recovery Factor", (metrics.recoveryFactor ?? 0).toFixed(2)],
-              ["Risk-Reward Ratio", (metrics.riskRewardRatio ?? 0).toFixed(2)],
-              ["Expectancy", `$${(metrics.expectancy ?? 0).toFixed(2)}`],
               ["VaR (95%)", `${(metrics.valueAtRisk95 ?? 0).toFixed(2)}%`],
-              ["Skewness", (metrics.profitSkewness ?? 0).toFixed(2)],
-              ["Kurtosis", (metrics.profitKurtosis ?? 0).toFixed(2)],
+              ["VaR (99%)", `${(metrics.valueAtRisk99 ?? 0).toFixed(2)}%`],
               ["Symbol", run.symbol],
             ].map(([label, value], i) => (
               <div key={i} className="flex justify-between text-sm py-1.5 border-b border-border/30">
@@ -701,6 +624,9 @@ function ReportsTab() {
       `Profit Factor: ${(m.profitFactor ?? 0).toFixed(2)}`,
       `Max Drawdown: ${(m.maxDrawdownPercent ?? 0).toFixed(2)}%`,
       `Sharpe Ratio: ${(m.sharpeRatio ?? 0).toFixed(2)}`,
+      `Sortino Ratio: ${(m.sortinoRatio ?? 0).toFixed(2)}`,
+      `Calmar Ratio: ${(m.calmarRatio ?? 0).toFixed(2)}`,
+      `VaR (95%): ${(m.valueAtRisk95 ?? 0).toFixed(2)}%`,
       `Total Trades: ${m.totalTrades ?? 0}`,
       `Avg Win: $${(m.avgWin ?? 0).toFixed(2)}`,
       `Avg Loss: $${(m.avgLoss ?? 0).toFixed(2)}`,
