@@ -36,6 +36,7 @@ export default function Footer() {
               <Link href="/studio" className="text-sm text-muted-foreground hover:text-primary transition-colors">Studio</Link>
               <Link href="/aureus-prime" className="text-sm text-muted-foreground hover:text-primary transition-colors">Aureus Prime EA</Link>
               <Link href="/docs" className="text-sm text-muted-foreground hover:text-primary transition-colors">Documentation</Link>
+              <Link href="/blog" className="text-sm text-muted-foreground hover:text-primary transition-colors">Blog</Link>
               <Link href="/funded-account-risk-management" className="text-sm text-muted-foreground hover:text-primary transition-colors">Funded Account Risk Management</Link>
               <Link href="/automated-trading-platform" className="text-sm text-muted-foreground hover:text-primary transition-colors">Automated Trading Platform</Link>
               <Link href="/expert-advisor-builder" className="text-sm text-muted-foreground hover:text-primary transition-colors">Expert Advisor Builder</Link>
