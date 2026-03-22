@@ -8,7 +8,8 @@ import {
   CheckCircle2, ArrowRight, Star,
   Activity, AlertTriangle, Target, Play, Users, Clock, ChevronUp, ChevronDown
 } from "lucide-react";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
+import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 
 const STRIPE_LINKS = {
   starter: "https://buy.stripe.com/9B6bJ11ITaEd7TJ6MBb3q02",
@@ -92,6 +93,20 @@ export default function Home() {
   const { isAuthenticated } = useAuth();
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const videoRef = useRef<HTMLDivElement>(null);
+  const videoElementRef = useRef<HTMLVideoElement>(null);
+  const videoEntry = useIntersectionObserver(videoElementRef, { threshold: 0.5 });
+
+  useEffect(() => {
+    if (videoElementRef.current) {
+      if (videoEntry?.isIntersecting) {
+        videoElementRef.current.play().catch(err => {
+          console.log("Autoplay prevented:", err);
+        });
+      } else {
+        videoElementRef.current.pause();
+      }
+    }
+  }, [videoEntry]);
   const [winRate, setWinRate] = useState(55);
   const [riskPerTrade, setRiskPerTrade] = useState(1);
   const [leadEmail, setLeadEmail] = useState("");
@@ -429,8 +444,11 @@ export default function Home() {
               <div className="relative rounded-2xl overflow-hidden border border-primary/30 shadow-2xl shadow-primary/10 bg-black group">
                 <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 via-primary/5 to-primary/20 blur-xl opacity-60 pointer-events-none" />
                 <video
+                  ref={videoElementRef}
                   className="relative w-full aspect-video"
                   controls
+                  muted
+                  loop
                   preload="metadata"
                   poster="/og-image.png"
                   playsInline

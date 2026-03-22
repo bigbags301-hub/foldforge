@@ -221,7 +221,7 @@ export default function AureusPrime() {
             {/* Video 1: Live Backtest */}
             <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer" className="glass-card rounded-2xl overflow-hidden border border-border/50 hover:border-primary/50 transition-colors group cursor-pointer">
               <div className="aspect-video bg-background/50 flex items-center justify-center relative">
-                <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg" alt="Aureus Prime Live Gold Backtest" className="w-full h-full object-cover group-hover:scale-105 transition-transform" />
+                <img src="https://images.unsplash.com/photo-1611974717484-788cff8fca47?auto=format&fit=crop&q=80&w=1000" alt="Aureus Prime Live Gold Backtest" className="w-full h-full object-cover group-hover:scale-105 transition-transform" />
                 <div className="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/50 transition-colors">
                   <div className="w-16 h-16 rounded-full bg-primary/80 flex items-center justify-center group-hover:bg-primary transition-colors">
                     <Play size={28} className="text-white ml-1" />
@@ -244,7 +244,7 @@ export default function AureusPrime() {
             {/* Video 2: Stress Testing */}
             <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer" className="glass-card rounded-2xl overflow-hidden border border-border/50 hover:border-primary/50 transition-colors group cursor-pointer">
               <div className="aspect-video bg-background/50 flex items-center justify-center relative">
-                <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg" alt="EA Stress Testing Guide" className="w-full h-full object-cover group-hover:scale-105 transition-transform" />
+                <img src="https://images.unsplash.com/photo-1642790106117-e829e14a795f?auto=format&fit=crop&q=80&w=1000" alt="EA Stress Testing Guide" className="w-full h-full object-cover group-hover:scale-105 transition-transform" />
                 <div className="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/50 transition-colors">
                   <div className="w-16 h-16 rounded-full bg-primary/80 flex items-center justify-center group-hover:bg-primary transition-colors">
                     <Play size={28} className="text-white ml-1" />
