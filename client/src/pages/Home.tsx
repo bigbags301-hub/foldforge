@@ -447,6 +447,7 @@ export default function Home() {
                   ref={videoElementRef}
                   className="relative w-full aspect-video"
                   controls
+                  autoPlay
                   muted
                   loop
                   preload="metadata"
