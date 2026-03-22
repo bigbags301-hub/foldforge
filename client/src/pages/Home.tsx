@@ -217,6 +217,7 @@ export default function Home() {
                   <p.icon size={22} className="text-destructive" />
                 </div>
                 <h3 className="text-lg font-semibold mb-2">{p.title}</h3>
+                <h3 className="text-lg font-semibold mb-2">{p.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
               </div>
             ))}
