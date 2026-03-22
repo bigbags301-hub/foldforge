@@ -178,6 +178,31 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Live Social Proof Notifications */}
+      <section className="border-b border-border/50 bg-primary/[0.01] py-6 overflow-hidden">
+        <div className="container">
+          <div className="flex items-center gap-2 mb-4 text-xs text-muted-foreground">
+            <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+            <span>Live Activity</span>
+          </div>
+          <div className="flex gap-4 overflow-x-auto pb-2">
+            {[
+              { name: "Marcus T.", action: "Started free trial", time: "2 min ago" },
+              { name: "Sarah K.", action: "Passed FTMO challenge", time: "5 min ago" },
+              { name: "James R.", action: "Downloaded EA Risk Checklist", time: "8 min ago" },
+              { name: "David L.", action: "Upgraded to Pro plan", time: "12 min ago" },
+              { name: "Alex M.", action: "Completed first backtest", time: "15 min ago" },
+            ].map((item, i) => (
+              <div key={i} className="flex-shrink-0 px-3 py-2 rounded-lg bg-secondary/50 border border-border/30 text-xs whitespace-nowrap">
+                <div className="font-medium text-foreground">{item.name}</div>
+                <div className="text-muted-foreground">{item.action}</div>
+                <div className="text-[10px] text-muted-foreground/60">{item.time}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Stats Bar */}
       <section className="border-y border-border/50 bg-secondary/20 py-10">
         <div className="container">
@@ -459,6 +484,47 @@ export default function Home() {
                 )}
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Comparison Table - FoldForge vs Alternatives */}
+      <section className="py-20 border-b border-border/50 bg-secondary/[0.02]">
+        <div className="container">
+          <div className="text-center mb-14">
+            <h2 className="text-3xl md:text-4xl font-bold font-['Playfair_Display'] mb-4">Why Choose <span className="gold-text">FoldForge</span>?</h2>
+            <p className="text-muted-foreground max-w-xl mx-auto">See how FoldForge stacks up against traditional backtesting tools.</p>
+          </div>
+          <div className="max-w-5xl mx-auto overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b border-border/50">
+                  <th className="text-left py-3 px-4 font-semibold text-foreground">Feature</th>
+                  <th className="text-center py-3 px-4 font-semibold text-primary">FoldForge</th>
+                  <th className="text-center py-3 px-4 font-semibold text-muted-foreground">Generic Backtesting</th>
+                  <th className="text-center py-3 px-4 font-semibold text-muted-foreground">Manual Testing</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  { feature: "Real Broker Data Sync", foldforge: true, generic: false, manual: false },
+                  { feature: "Monte Carlo Simulation", foldforge: true, generic: false, manual: false },
+                  { feature: "Walk-Forward Analysis", foldforge: true, generic: false, manual: false },
+                  { feature: "Real-Time Drawdown Guardian", foldforge: true, generic: false, manual: false },
+                  { feature: "Prop Firm Safe Mode", foldforge: true, generic: false, manual: false },
+                  { feature: "Stress Testing Suite", foldforge: true, generic: false, manual: false },
+                  { feature: "Setup Time", foldforge: true, generic: true, manual: false },
+                  { feature: "Cost", foldforge: true, generic: false, manual: true },
+                ].map((row, i) => (
+                  <tr key={i} className="border-b border-border/30 hover:bg-primary/[0.02] transition-colors">
+                    <td className="py-3 px-4 font-medium text-foreground">{row.feature}</td>
+                    <td className="text-center py-3 px-4">{row.foldforge ? <CheckCircle2 size={18} className="text-primary mx-auto" /> : <div className="w-1.5 h-1.5 rounded-full bg-muted-foreground/30 mx-auto" />}</td>
+                    <td className="text-center py-3 px-4">{row.generic ? <CheckCircle2 size={18} className="text-primary mx-auto" /> : <div className="w-1.5 h-1.5 rounded-full bg-muted-foreground/30 mx-auto" />}</td>
+                    <td className="text-center py-3 px-4">{row.manual ? <CheckCircle2 size={18} className="text-primary mx-auto" /> : <div className="w-1.5 h-1.5 rounded-full bg-muted-foreground/30 mx-auto" />}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
       </section>
