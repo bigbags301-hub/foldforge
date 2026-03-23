@@ -25,7 +25,8 @@ export default function ExpertAdvisorBuilder() {
               Don't just build EAs—validate them. FoldForge is the ultimate Expert Advisor builder's companion, providing institutional-grade stress testing and Monte Carlo analysis for MetaTrader developers.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link href="/signup">
+              <Link href="/pricing">
+                <Button
                 <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 h-12 text-base font-semibold">
                   Start Testing Free <ArrowRight size={18} className="ml-2" />
                 </Button>
@@ -90,7 +91,8 @@ export default function ExpertAdvisorBuilder() {
             <p className="text-muted-foreground mb-10">
               Join the elite group of Expert Advisor builders who prioritize validation and risk management.
             </p>
-            <Link href="/signup">
+            <Link href="/pricing">
+              <Button
               <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 px-12 h-14 text-lg font-bold">
                 Get Started Now
               </Button>

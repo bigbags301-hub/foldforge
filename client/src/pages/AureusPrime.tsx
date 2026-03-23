@@ -50,7 +50,8 @@ export default function AureusPrime() {
                 The institutional-grade Expert Advisor built for serious traders. Aureus Prime combines adaptive volatility analysis, dynamic position sizing, and prop-firm-safe risk management into a single, battle-tested trading engine.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="/signup">
+                <Link href="/pricing">
+                  <Button
                   <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 h-12">
                     Get Free Access <ArrowRight size={18} className="ml-2" />
                   </Button>
@@ -277,7 +278,8 @@ export default function AureusPrime() {
             Get 7 days free access to Aureus Prime EA, the testing studio, and real-time drawdown protection. No credit card required.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/signup">
+            <Link href="/pricing">
+              <Button
               <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 h-12 text-base font-semibold">
                 Start Free Trial <ArrowRight size={18} className="ml-2" />
               </Button>

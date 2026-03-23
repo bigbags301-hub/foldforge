@@ -221,3 +221,15 @@ export const featureFlags = sqliteTable("feature_flags", {
   description: text("description"),
   updatedAt: text("updatedAt").default(sql`(datetime('now'))`).notNull(),
 });
+
+/* ── Leads (Email Capture) ─────────────────────────────────────── */
+export const leads = sqliteTable("leads", {
+  id: integer("id").primaryKey({ autoIncrement: true }),
+  email: text("email").notNull().unique(),
+  source: text("source").default("unknown").notNull(),
+  hubspotContactId: text("hubspotContactId"),
+  downloadedAt: text("downloadedAt"),
+  createdAt: text("createdAt").default(sql`(datetime('now'))`).notNull(),
+});
+
+export type Lead = typeof leads.$inferSelect;

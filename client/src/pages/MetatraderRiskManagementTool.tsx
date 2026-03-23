@@ -25,7 +25,8 @@ export default function MetatraderRiskManagementTool() {
               Enforce discipline and protect your capital with FoldForge. The ultimate MetaTrader risk management tool for serious MT4 and MT5 traders who value consistency over luck.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link href="/signup">
+              <Link href="/pricing">
+                <Button
                 <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 h-12 text-base font-semibold">
                   Secure My Account <ArrowRight size={18} className="ml-2" />
                 </Button>
@@ -103,7 +104,8 @@ export default function MetatraderRiskManagementTool() {
           <p className="text-muted-foreground mb-10 max-w-2xl mx-auto">
             Take control of your risk with the most advanced MetaTrader risk management tool on the market.
           </p>
-          <Link href="/signup">
+          <Link href="/pricing">
+            <Button
             <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 px-12 h-14 text-lg font-bold">
               Get Started Now
             </Button>

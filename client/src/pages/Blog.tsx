@@ -16,7 +16,7 @@ const posts = [
     category: "Prop Firm",
     readTime: "8 min read",
     featured: true,
-    image: "https://images.unsplash.com/photo-1611974717484-7da8c1746b62?auto=format&fit=crop&q=80&w=800",
+    image: "/images/blog/funded-account-risk.webp",
     icon: Shield,
   },
   {

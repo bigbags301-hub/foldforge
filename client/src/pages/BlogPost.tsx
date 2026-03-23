@@ -13,7 +13,7 @@ const BLOG_POSTS: Record<string, any> = {
     author: "FoldForge Editorial",
     category: "Prop Firm",
     icon: Shield,
-    image: "https://images.unsplash.com/photo-1611974717484-7da8c1746b62?auto=format&fit=crop&q=80&w=1200",
+    image: "/images/blog/funded-account-risk.webp",
     content: `
 The prop firm industry has exploded. With firms offering up to $200,000 in simulated capital for a fraction of the cost, the barrier to entry for professional trading has never been lower. Yet, the statistics remain grim: **over 90% of traders fail their evaluation challenges**, and of those who pass, the majority lose their funded accounts within the first payout cycle.
 
@@ -467,7 +467,7 @@ export default function BlogPost() {
             <p className="text-muted-foreground mb-8 max-w-lg mx-auto">
               Join 1,200+ professional traders who use FoldForge to validate their Expert Advisors and protect their funded accounts.
             </p>
-            <Link href="/signup">
+            <Link href="/pricing">
               <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 h-12 text-base font-semibold shadow-lg shadow-primary/20">
                 Start Your 7-Day Free Trial <ArrowRight size={18} className="ml-2" />
               </Button>

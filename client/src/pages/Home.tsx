@@ -124,9 +124,16 @@ export default function Home() {
         body: JSON.stringify({ email: leadEmail, source: "home_lead_magnet" }),
       });
       if (res.ok) {
+        const data = await res.json();
         setLeadSubmitted(true);
-        // In a real app, we might trigger a download here
-        window.open("https://foldforge.app/downloads/EA-Risk-Checklist.pdf", "_blank");
+        // Trigger immediate PDF download
+        const downloadUrl = data.downloadUrl || "/downloads/EA-Risk-Checklist.pdf";
+        const link = document.createElement("a");
+        link.href = downloadUrl;
+        link.download = "EA-Risk-Checklist.pdf";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
       }
     } catch (err) {
       console.error("Lead submission failed", err);
@@ -156,7 +163,7 @@ export default function Home() {
         <span className="flex items-center justify-center gap-2">
           <Clock size={14} />
           Limited time: 7-day free trial on all plans — No credit card required.
-          <Link href="/signup" className="underline font-bold hover:no-underline ml-1">Start Free →</Link>
+          <Link href="/pricing" className="underline font-bold hover:no-underline ml-1">Start Free →</Link>
         </span>
       </div>
 
@@ -209,7 +216,7 @@ export default function Home() {
                 </Link>
               ) : (
                 <>
-                  <Link href="/signup">
+                  <Link href="/pricing">
                     <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 h-12 text-base font-semibold shadow-lg shadow-primary/20">
                       Test Your Strategy Now <ArrowRight size={18} className="ml-2" />
                     </Button>
@@ -365,7 +372,7 @@ export default function Home() {
                       style={{ width: `${blowUpRisk}%` }}
                     ></div>
                   </div>
-                  <Link href="/signup">
+                  <Link href="/pricing">
                     <Button className="w-full bg-primary text-primary-foreground hover:bg-primary/90 h-12 font-bold">
                       Get Full Stress Test Report <ArrowRight size={18} className="ml-2" />
                     </Button>
@@ -497,7 +504,7 @@ export default function Home() {
                   </div>
                 ))}
               </div>
-              <Link href="/signup">
+              <Link href="/pricing">
                 <Button className="bg-primary text-primary-foreground hover:bg-primary/90 font-semibold">
                   Protect My Account <ArrowRight size={16} className="ml-2" />
                 </Button>
@@ -738,9 +745,16 @@ export default function Home() {
                   <Button 
                     variant="link" 
                     className="mt-4 text-primary font-bold"
-                    onClick={() => window.open("https://foldforge.app/downloads/EA-Risk-Checklist.pdf", "_blank")}
+                    onClick={() => {
+                      const link = document.createElement("a");
+                      link.href = "/downloads/EA-Risk-Checklist.pdf";
+                      link.download = "EA-Risk-Checklist.pdf";
+                      document.body.appendChild(link);
+                      link.click();
+                      document.body.removeChild(link);
+                    }}
                   >
-                    Didn't start? Click here to download manually.
+                    Didn't receive it? Click here to download directly.
                   </Button>
                 </div>
               ) : (
@@ -778,9 +792,9 @@ export default function Home() {
             We show you how your strategy actually fails before it costs you money. Join 1,200+ traders protecting $50M+ in capital.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
-            <Link href="/signup">
+            <Link href="/pricing">
               <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 px-10 h-14 text-lg font-bold shadow-xl shadow-primary/20">
-                See Your Blow-Up Risk <ArrowRight size={20} className="ml-2" />
+                Start Your Free Trial <ArrowRight size={20} className="ml-2" />
               </Button>
             </Link>
             <Link href="/support">

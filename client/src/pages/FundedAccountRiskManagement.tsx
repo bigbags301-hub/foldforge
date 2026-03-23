@@ -25,7 +25,8 @@ export default function FundedAccountRiskManagement() {
               Don't let one rogue trade wipe out your hard-earned prop firm capital. FoldForge provides the institutional-grade tools you need to enforce discipline and protect your funded accounts.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link href="/signup">
+              <Link href="/pricing">
+                <Button
                 <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 h-12 text-base font-semibold">
                   Protect My Account <ArrowRight size={18} className="ml-2" />
                 </Button>
@@ -114,7 +115,8 @@ export default function FundedAccountRiskManagement() {
             <p className="text-muted-foreground mb-10">
               Join thousands of traders who use FoldForge to maintain discipline and protect their funded accounts.
             </p>
-            <Link href="/signup">
+            <Link href="/pricing">
+              <Button
               <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 px-12 h-14 text-lg font-bold">
                 Get Started Now
               </Button>

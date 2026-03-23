@@ -25,7 +25,8 @@ export default function EAStressTesting() {
               Don't deploy your Expert Advisors blindly. Use FoldForge to run advanced EA stress testing, Monte Carlo simulations, and walk-forward analysis with 100% accurate broker data.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link href="/signup">
+              <Link href="/pricing">
+                <Button
                 <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 h-12 text-base font-semibold">
                   Start Stress Testing <ArrowRight size={18} className="ml-2" />
                 </Button>
@@ -89,7 +90,8 @@ export default function EAStressTesting() {
           <p className="text-muted-foreground mb-10 max-w-2xl mx-auto">
             Join thousands of traders who use FoldForge to maintain discipline and protect their capital with advanced EA stress testing.
           </p>
-          <Link href="/signup">
+          <Link href="/pricing">
+            <Button
             <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 px-12 h-14 text-lg font-bold">
               Get Started Now
             </Button>

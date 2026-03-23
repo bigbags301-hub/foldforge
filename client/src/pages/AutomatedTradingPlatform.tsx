@@ -25,7 +25,8 @@ export default function AutomatedTradingPlatform() {
               Take your Expert Advisors to the next level with FoldForge. The only automated trading platform designed for institutional-grade stress testing and broker-specific data synchronization.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link href="/signup">
+              <Link href="/pricing">
+                <Button
                 <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 h-12 text-base font-semibold">
                   Get Started Free <ArrowRight size={18} className="ml-2" />
                 </Button>
@@ -91,7 +92,8 @@ export default function AutomatedTradingPlatform() {
           <p className="text-muted-foreground mb-10 max-w-2xl mx-auto">
             Stop deploying untested EAs. Join the professional traders who use FoldForge to validate every trade before it happens.
           </p>
-          <Link href="/signup">
+          <Link href="/pricing">
+            <Button
             <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 px-12 h-14 text-lg font-bold">
               Start Your 7-Day Free Trial
             </Button>

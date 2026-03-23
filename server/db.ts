@@ -6,7 +6,7 @@ import fs from "fs";
 import {
   InsertUser, users, subscriptions, licenses, activations,
   files, downloadLogs, tickets, brokerSymbols, brokerOhlc,
-  brokerSpreads, symbolReference, studioRuns, featureFlags,
+  brokerSpreads, symbolReference, studioRuns, featureFlags, leads,
 } from "../drizzle/schema";
 import { ENV } from './_core/env';
 
@@ -194,6 +194,14 @@ function initSQLite() {
       flagValue INTEGER NOT NULL DEFAULT 0,
       description TEXT,
       updatedAt TEXT NOT NULL DEFAULT (datetime('now'))
+    );
+    CREATE TABLE IF NOT EXISTS leads (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      email TEXT NOT NULL UNIQUE,
+      source TEXT NOT NULL DEFAULT 'unknown',
+      hubspotContactId TEXT,
+      downloadedAt TEXT,
+      createdAt TEXT NOT NULL DEFAULT (datetime('now'))
     );
   `);
 
@@ -683,4 +691,31 @@ export async function getAdminMetrics() {
     openTickets: ticketCount?.count ?? 0,
     mrrEstimate: mrr,
   };
+}
+
+/* ── Leads ─────────────────────────────────────────────────────── */
+export async function upsertLead(email: string, source: string, hubspotContactId?: string) {
+  const db = getDb();
+  const existing = db.select().from(leads).where(eq(leads.email, email)).limit(1).all();
+  if (existing.length > 0) {
+    db.update(leads).set({
+      source,
+      hubspotContactId: hubspotContactId ?? existing[0].hubspotContactId,
+      downloadedAt: new Date().toISOString(),
+    }).where(eq(leads.email, email)).run();
+    return existing[0];
+  } else {
+    db.insert(leads).values({
+      email,
+      source,
+      hubspotContactId: hubspotContactId ?? null,
+      downloadedAt: new Date().toISOString(),
+    }).run();
+    return db.select().from(leads).where(eq(leads.email, email)).limit(1).all()[0];
+  }
+}
+
+export async function getLeads() {
+  const db = getDb();
+  return db.select().from(leads).orderBy(desc(leads.createdAt)).all();
 }

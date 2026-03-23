@@ -181,15 +181,58 @@ apiRouter.post("/api/leads/collect", async (req: Request, res: Response) => {
   try {
     const { email, source } = req.body;
     if (!email) return res.status(400).json({ success: false, error: "Email is required" });
-    
-    // In a real app, we would save this to a 'leads' table
-    // For now, we'll log it and return success
-    console.log(`[Lead Collected] Email: ${email}, Source: ${source || 'unknown'}`);
-    
+
+    // Save lead to local database
+    let hubspotContactId: string | undefined;
+    try {
+      await db.upsertLead(email, source || "home_lead_magnet");
+    } catch (dbErr) {
+      console.warn("[Lead Collection] DB upsert warning:", dbErr);
+    }
+
+    // Submit to HubSpot via Forms API (server-side, no CORS issues)
+    const HUBSPOT_PORTAL_ID = "245635786";
+    const HUBSPOT_FORM_ID = "78b9ddc9-a9a1-4e1e-8647-d7759c252949";
+    try {
+      const hubspotRes = await fetch(
+        `https://api.hsforms.com/submissions/v3/integration/submit/${HUBSPOT_PORTAL_ID}/${HUBSPOT_FORM_ID}`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            fields: [
+              { objectTypeId: "0-1", name: "email", value: email },
+            ],
+            context: {
+              pageUri: "https://foldforge.app",
+              pageName: "FoldForge Home - EA Risk Checklist",
+            },
+          }),
+        }
+      );
+      if (hubspotRes.ok) {
+        const hsData = await hubspotRes.json();
+        hubspotContactId = hsData?.inlineMessage || undefined;
+        console.log(`[Lead Collected] Email: ${email} submitted to HubSpot successfully`);
+      } else {
+        const errText = await hubspotRes.text();
+        console.warn(`[Lead Collection] HubSpot submission failed: ${hubspotRes.status} - ${errText}`);
+      }
+    } catch (hsErr) {
+      console.warn("[Lead Collection] HubSpot submission error:", hsErr);
+    }
+
+    // Update lead with HubSpot contact ID if available
+    if (hubspotContactId) {
+      try {
+        await db.upsertLead(email, source || "home_lead_magnet", hubspotContactId);
+      } catch (_) {}
+    }
+
     return res.json({ 
       success: true, 
       message: "Lead collected successfully",
-      downloadUrl: "https://foldforge.app/downloads/EA-Risk-Checklist.pdf" 
+      downloadUrl: "/downloads/EA-Risk-Checklist.pdf"
     });
   } catch (e: any) {
     console.error("[Lead Collection Error]", e);

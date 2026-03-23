@@ -156,7 +156,7 @@ export default function Navbar() {
               <Link href="/login">
                 <Button variant="ghost" size="sm">Sign In</Button>
               </Link>
-              <Link href="/signup">
+              <Link href="/pricing">
                 <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90">
                   Get Started
                 </Button>
@@ -249,7 +249,7 @@ export default function Navbar() {
                   <Link href="/login" onClick={() => setMobileOpen(false)}>
                     <Button variant="ghost" size="sm" className="w-full justify-start">Sign In</Button>
                   </Link>
-                  <Link href="/signup" onClick={() => setMobileOpen(false)}>
+                  <Link href="/pricing" onClick={() => setMobileOpen(false)}>
                     <Button size="sm" className="w-full bg-primary text-primary-foreground">Get Started</Button>
                   </Link>
                 </>
