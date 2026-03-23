@@ -26,7 +26,6 @@ export default function AutomatedTradingPlatform() {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link href="/pricing">
-                <Button
                 <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 h-12 text-base font-semibold">
                   Get Started Free <ArrowRight size={18} className="ml-2" />
                 </Button>
@@ -93,7 +92,6 @@ export default function AutomatedTradingPlatform() {
             Stop deploying untested EAs. Join the professional traders who use FoldForge to validate every trade before it happens.
           </p>
           <Link href="/pricing">
-            <Button
             <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 px-12 h-14 text-lg font-bold">
               Start Your 7-Day Free Trial
             </Button>

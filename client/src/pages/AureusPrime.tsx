@@ -51,7 +51,6 @@ export default function AureusPrime() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/pricing">
-                  <Button
                   <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 h-12">
                     Get Free Access <ArrowRight size={18} className="ml-2" />
                   </Button>
@@ -279,7 +278,6 @@ export default function AureusPrime() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/pricing">
-              <Button
               <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 h-12 text-base font-semibold">
                 Start Free Trial <ArrowRight size={18} className="ml-2" />
               </Button>

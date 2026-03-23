@@ -26,7 +26,6 @@ export default function MetatraderRiskManagementTool() {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link href="/pricing">
-                <Button
                 <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 h-12 text-base font-semibold">
                   Secure My Account <ArrowRight size={18} className="ml-2" />
                 </Button>
@@ -105,7 +104,6 @@ export default function MetatraderRiskManagementTool() {
             Take control of your risk with the most advanced MetaTrader risk management tool on the market.
           </p>
           <Link href="/pricing">
-            <Button
             <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 px-12 h-14 text-lg font-bold">
               Get Started Now
             </Button>
