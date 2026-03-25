@@ -8,6 +8,18 @@ import { useState } from "react";
 
 const posts = [
   {
+    slug: "the-future-of-algorithmic-trading-in-2026",
+    title: "The Future of Algorithmic Trading in 2026: AI, Prop Firms, and the New Era of Risk Management",
+    excerpt: "Explore how AI, prop firms, and advanced risk management are reshaping algorithmic trading in 2026. Discover opportunities and challenges for EA developers and traders.",
+    date: "March 25, 2026",
+    author: "FoldForge Editorial",
+    category: "AI Trading",
+    readTime: "12 min read",
+    featured: true,
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800",
+    icon: TrendingUp,
+  },
+  {
     slug: "the-science-of-ea-stress-testing",
     title: "The Science of EA Stress Testing: Why Your Backtests Fail and How to Fix Them in 2026",
     excerpt: "Uncover the scientific methods behind effective EA validation. Learn why traditional backtests often fail and how advanced stress testing, Monte Carlo simulations, and broker data synchronization provide the solution.",
@@ -100,7 +112,7 @@ const posts = [
   },
 ];
 
-const categories = ["All", "Prop Firm", "EA Testing", "Risk Management", "Data Sync"];
+const categories = ["All", "Prop Firm", "EA Testing", "Risk Management", "Data Sync", "AI Trading"];
 
 export default function Blog() {
   const [activeCategory, setActiveCategory] = useState("All");
