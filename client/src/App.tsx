@@ -5,6 +5,7 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import { Suspense } from "react";
 import { lazyRetry } from "./lib/lazy-retry";
+import StickyCTA from "./components/StickyCTA";
 
 const Home = lazyRetry(() => import("./pages/Home"), "Home");
 const Blog = lazyRetry(() => import("./pages/Blog"), "Blog");
@@ -83,8 +84,9 @@ function App() {
     <ErrorBoundary>
       <ThemeProvider defaultTheme="dark">
         <TooltipProvider>
-          <Toaster />
-          <Router />
+<Toaster />
+	          <Router />
+	          <StickyCTA />
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>

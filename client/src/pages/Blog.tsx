@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { Calendar, ArrowRight, Tag, Clock, TrendingUp, Shield, Database, BarChart3, Users } from "lucide-react";
 import { useState } from "react";
+import NewsletterPopup from "@/components/NewsletterPopup";
 
 const posts = [
   {
@@ -127,6 +128,7 @@ export default function Blog() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />
+      <NewsletterPopup />
       <div className="pt-28 pb-20">
         <div className="container">
           {/* Header */}

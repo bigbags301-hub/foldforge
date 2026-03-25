@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
+import StrategyAuditModal from "@/components/StrategyAuditModal";
 
 const STRIPE_LINKS = {
   starter: "https://buy.stripe.com/9B6bJ11ITaEd7TJ6MBb3q02",
@@ -114,6 +115,7 @@ export default function Home() {
   const [isSubmittingLead, setIsSubmittingLead] = useState(false);
   const [leadSubmitted, setLeadSubmitted] = useState(false);
   const [showExitIntent, setShowExitIntent] = useState(false);
+  const [showAuditModal, setShowAuditModal] = useState(false);
 
   useEffect(() => {
     const handleMouseOut = (e: MouseEvent) => {
@@ -181,6 +183,12 @@ export default function Home() {
       </div>
 
       <Navbar />
+
+      {/* Strategy Audit Modal */}
+      <StrategyAuditModal 
+        isOpen={showAuditModal} 
+        onClose={() => setShowAuditModal(false)} 
+      />
 
       {/* Exit Intent Modal */}
       {showExitIntent && (
@@ -334,16 +342,30 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Prop Firm Compatibility */}
-      <section className="py-10 border-b border-border/50">
+      {/* Prop Firm Compatibility & Trust Badges */}
+      <section className="py-12 border-b border-border/50 bg-secondary/10">
         <div className="container">
-          <p className="text-center text-sm text-muted-foreground mb-6 font-medium">COMPATIBLE WITH ALL MAJOR PROP FIRMS</p>
-          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-8">
-            {PROP_FIRMS.map((firm, i) => (
-              <div key={i} className="px-4 py-2 rounded-lg border border-border/50 bg-secondary/30 text-sm font-semibold text-muted-foreground hover:border-primary/30 hover:text-foreground transition-colors">
-                {firm}
+          <div className="text-center mb-8">
+            <p className="text-xs font-bold tracking-widest text-primary uppercase mb-2">Institutional Grade Trust</p>
+            <h3 className="text-xl font-bold font-['Playfair_Display']">Trusted by Traders from Leading Prop Firms</h3>
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-6 md:gap-12 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
+            {["FTMO", "Topstep", "The5ers", "MyForexFunds", "E8 Funding", "Funded Engineer", "Alpha Capital", "Apex Trader Funding"].map((firm, i) => (
+              <div key={i} className="flex items-center gap-2 group">
+                <Shield size={18} className="text-primary group-hover:scale-110 transition-transform" />
+                <span className="text-lg font-black tracking-tighter text-foreground/80 group-hover:text-primary transition-colors">{firm}</span>
               </div>
             ))}
+          </div>
+          <div className="mt-10 flex justify-center">
+            <div className="inline-flex items-center gap-4 px-6 py-3 rounded-2xl border border-primary/20 bg-primary/5">
+              <div className="flex items-center gap-1">
+                {[1,2,3,4,5].map(s => <Star key={s} size={14} className="text-yellow-500 fill-yellow-500" />)}
+              </div>
+              <span className="text-sm font-medium text-foreground/80">
+                <strong>4.9/5</strong> based on 1,200+ verified trader reviews
+              </span>
+            </div>
           </div>
         </div>
       </section>
@@ -856,11 +878,14 @@ export default function Home() {
                 Start Your Free Trial <ArrowRight size={20} className="ml-2" />
               </Button>
             </Link>
-            <Link href="/support">
-              <Button variant="outline" size="lg" className="px-10 h-14 text-lg border-border hover:bg-secondary">
-                Talk to Sales
-              </Button>
-            </Link>
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="px-10 h-14 text-lg border-border hover:bg-secondary"
+              onClick={() => setShowAuditModal(true)}
+            >
+              Free Strategy Audit
+            </Button>
           </div>
           <p className="text-xs text-muted-foreground mt-6">No credit card required &bull; Instant setup &bull; Prop firm safe</p>
         </div>
