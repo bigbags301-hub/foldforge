@@ -57,6 +57,19 @@ const SHOWCASE_ITEMS = [
     ],
     badge: "Verified Showcase",
   },
+  {
+    id: 4,
+    src: "/aureus-prime-showcase-4.png",
+    alt: "Aureus Prime EA – Professional Trade Showcase: XAUUSD, +568.5 Points Profit, Adaptive Volatility Engine, Verified",
+    title: "High-Performance Result — XAUUSD",
+    subtitle: "Validated on FoldForge",
+    metrics: [
+      { label: "Profit", value: "+568.5 Points", color: "text-emerald-400" },
+      { label: "Asset", value: "XAUUSD", color: "text-primary" },
+      { label: "Strategy", value: "Adaptive", color: "text-emerald-400" },
+    ],
+    badge: "Verified Showcase",
+  },
 ];
 
 const STATS = [
