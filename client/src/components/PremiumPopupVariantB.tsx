@@ -180,7 +180,7 @@ export default function PremiumPopupVariantB({ onClose }: VariantBProps) {
                     </label>
                     <input
                       type="text"
-                      placeholder="John Doe"
+                      placeholder="Alex Morgan"
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                       disabled={loading}

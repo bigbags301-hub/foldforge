@@ -49,7 +49,7 @@ export default function PremiumFreeMonthPopup({ onClose }: PremiumFreeMonthPopup
 
       const elapsedSeconds = (Date.now() - scrollStartTimeRef.current) / 1000;
       const hasScrolled = window.scrollY > 100;
-      const isInTimeWindow = elapsedSeconds >= 5 && elapsedSeconds <= 10;
+      const isInTimeWindow = elapsedSeconds >= 15;
 
       // Check localStorage to prevent showing multiple times
       const alreadyShown = localStorage.getItem("premium_free_month_shown");
