@@ -5,6 +5,7 @@ import net from "net";
 import { createExpressMiddleware } from "@trpc/server/adapters/express";
 import { registerSupabaseAuthRoutes } from "../supabaseAuth";
 import { apiRouter } from "../apiRoutes";
+import { analyticsRouter } from "../analytics";
 import { registerChatRoutes } from "./chat";
 import { appRouter } from "../routers";
 import { createContext } from "./context";
@@ -41,6 +42,8 @@ async function startServer() {
   registerChatRoutes(app);
   // REST API routes (license, broker sync, stripe webhook)
   app.use(apiRouter);
+  // Analytics routes (A/B testing, popup events)
+  app.use(analyticsRouter);
   // tRPC API
   app.use(
     "/api/trpc",
