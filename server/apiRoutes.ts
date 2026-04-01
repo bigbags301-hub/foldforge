@@ -179,7 +179,7 @@ apiRouter.post("/api/broker/heartbeat", async (req: Request, res: Response) => {
 /* ── Lead Collection ─────────────────────────────────────────── */
 apiRouter.post("/api/leads/collect", async (req: Request, res: Response) => {
   try {
-    const { email, source } = req.body;
+    const { email, name, source } = req.body;
     if (!email) return res.status(400).json({ success: false, error: "Email is required" });
 
     // Save lead to local database
@@ -202,6 +202,7 @@ apiRouter.post("/api/leads/collect", async (req: Request, res: Response) => {
           body: JSON.stringify({
             fields: [
               { objectTypeId: "0-1", name: "email", value: email },
+              ...(name ? [{ objectTypeId: "0-1", name: "firstname", value: name }] : []),
             ],
             context: {
               pageUri: "https://foldforge.app",

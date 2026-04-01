@@ -13,6 +13,7 @@ import {
 import { useState, useRef, useEffect } from "react";
 import { useIntersectionObserver } from "@/hooks/useIntersectionObserver";
 import StrategyAuditModal from "@/components/StrategyAuditModal";
+import PremiumFreeMonthPopup from "@/components/PremiumFreeMonthPopup";
 
 const STRIPE_LINKS = {
   starter: "https://buy.stripe.com/9B6bJ11ITaEd7TJ6MBb3q02",
@@ -707,6 +708,9 @@ export default function Home() {
       
       {/* Audit Modal */}
       <StrategyAuditModal isOpen={showAuditModal} onClose={() => setShowAuditModal(false)} />
+      
+      {/* Premium Free Month Popup */}
+      <PremiumFreeMonthPopup />
     </div>
   );
 }
