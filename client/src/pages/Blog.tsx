@@ -161,6 +161,15 @@ export default function Blog() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-background via-background to-secondary/5">
+      {/* Featured Image */}
+      <div className="w-full h-96 md:h-[500px] overflow-hidden bg-secondary/20">
+        <img
+          src="https://d2xsxph8kpxj0f.cloudfront.net/310519663078266506/c9gxcuVLdgbmPnwHb2fzow/foldforge-blog-hero-3vJcdR7qkipBzQQUBXadDY.webp"
+          alt="FoldForge Blog - The 7 Best Funded Accounts for 2026"
+          className="w-full h-full object-cover"
+        />
+      </div>
+
       {/* Navigation */}
       <nav className="sticky top-0 z-40 border-b border-border/40 bg-background/95 backdrop-blur-sm">
         <div className="container max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
