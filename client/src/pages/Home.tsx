@@ -35,7 +35,7 @@ const FEATURES = [
   { icon: Zap, title: "EA Stress Testing Studio", desc: "Run Monte Carlo simulations, parameter sweeps, and walk-forward analysis on any Expert Advisor. Find the breaking point before the market does." },
   { icon: Database, title: "Broker Data Pipeline", desc: "Sync your broker's exact symbol specs, spreads, and OHLC history via our MT4/MT5 uploader EA. Real data. Real results." },
   { icon: Shield, title: "Funded Account Guardian", desc: "Real-time drawdown monitoring with automatic position sizing to protect your prop firm capital. Never blow a challenge again." },
-  { icon: Star, title: "Institutional Trust", desc: "Trusted by 1,200+ elite traders and 15+ global prop firms. 256-bit encrypted data security and 99.9% uptime SLA." },
+  { icon: Star, title: "Built by a Trading Firm", desc: "Built by Giddings Capital Management to test its own expert advisors before they trade real money. Your data travels over encrypted connections." },
   { icon: BarChart3, title: "172+ Symbol Reference Hub", desc: "Pre-loaded reference data across forex, metals, indices, crypto, commodities, and bonds. The most comprehensive dataset available." },
   { icon: Lock, title: "License-Gated Access", desc: "Hardware-bound license keys with activation limits, grace periods, and instant provisioning. Secure and scalable for any operation." },
   { icon: TrendingUp, title: "Performance Analytics", desc: "Equity curves, Sharpe ratios, profit factors, monthly returns, and exportable PDF reports. Institutional-grade reporting." },
@@ -72,14 +72,6 @@ const PLANS = [
   },
 ];
 
-const TESTIMONIALS = [
-  { name: "Marcus T.", role: "FTMO Funded Trader", text: "FoldForge saved my $250K funded account. Monte Carlo testing caught a 7.2% hidden drawdown issue that would've blown everything in week one. Now I'm consistently profitable.", rating: 5, avatar: "MT", metric: "Saved $250K Account" },
-  { name: "Sarah K.", role: "EA Developer", text: "My backtests now match live results within 2%. Passed 3 FTMO challenges in a row. The broker data sync eliminated the spread gap that was killing my strategies.", rating: 5, avatar: "SK", metric: "3 Challenges Passed" },
-  { name: "James R.", role: "Quant Analyst", text: "Reduced strategy validation time from 14 days to 2 days. The stress testing suite caught edge cases my manual testing missed. ROI on subscription: 400%+.", rating: 5, avatar: "JR", metric: "10x Faster Validation" },
-  { name: "David L.", role: "Fund Manager", text: "We validate every EA through FoldForge before deploying to client accounts. Drawdown protection has prevented 7 account blowups this year. Invaluable.", rating: 5, avatar: "DL", metric: "7 Accounts Protected" },
-  { name: "Alex M.", role: "Prop Firm Trader", text: "Passed my first $100K FTMO challenge on the first try. The Guardian's real-time drawdown monitoring prevented 2 catastrophic trades. Best $39/month I've spent.", rating: 5, avatar: "AM", metric: "Challenge Passed" },
-  { name: "Chen W.", role: "Algorithmic Trader", text: "Live results now match backtests within 3%. The broker data pipeline solved the spread/slippage problem that was costing me $500/month. Immediate ROI.", rating: 5, avatar: "CW", metric: "3% Accuracy Match" },
-];
 
 const FAQS = [
   { q: "What is FoldForge?", a: "FoldForge is an institutional-grade SaaS platform for MetaTrader traders. It provides EA stress testing, broker data synchronization, and real-time risk management tools designed to protect funded trading accounts and validate trading strategies." },
@@ -87,17 +79,11 @@ const FAQS = [
   { q: "How does the broker data pipeline work?", a: "Install our lightweight data-pulling EA on your MT4/MT5 platform. It automatically syncs your broker's symbol specifications, spread samples, and OHLC history to your FoldForge account — giving you the most accurate backtesting environment possible." },
   { q: "Can I cancel my subscription anytime?", a: "Absolutely. You can cancel at any time from your dashboard with one click. Your access continues until the end of your current billing period with no hidden fees. See our refund policy for details." },
   { q: "What is the Funded Account Guardian?", a: "The Funded Account Guardian monitors your prop firm account in real-time, enforcing drawdown limits and position sizing rules to prevent catastrophic losses. It works with FTMO, MyForexFunds, The5ers, Topstep, and all major prop firms." },
-  { q: "Is my trading data secure?", a: "Yes. All data is encrypted in transit and at rest using AES-256 encryption. We never share your trading data with third parties. Your broker credentials never touch our servers — only the data-pulling EA communicates with your platform." },
+  { q: "Is my trading data secure?", a: "Yes. All data is encrypted in transit. We never share your trading data with third parties. Your broker credentials never touch our servers — only the data-pulling EA communicates with your platform." },
   { q: "What prop firms does FoldForge support?", a: "FoldForge is compatible with all major prop firms including FTMO, MyForexFunds, The5ers, Topstep, Funded Engineer, E8 Funding, True Forex Funds, and any firm using MetaTrader 4 or 5." },
   { q: "Is there a free trial?", a: "Yes! All plans include a 7-day free trial with full access to all features. No credit card required to start. You can upgrade, downgrade, or cancel at any time." },
 ];
 
-const STATS = [
-  { value: "1,200+", label: "Active Traders", icon: Users },
-  { value: "$50M+", label: "Capital Protected", icon: Shield },
-  { value: "172+", label: "Symbols Available", icon: BarChart3 },
-  { value: "4.9/5", label: "Average Rating", icon: Star },
-];
 
 const PROP_FIRMS = ["FTMO", "MyForexFunds", "The5ers", "Topstep", "E8 Funding", "Funded Engineer"];
 
@@ -232,7 +218,7 @@ export default function Home() {
                   ))}
                 </div>
                 <span className="text-[11px] font-bold text-primary uppercase tracking-widest">
-                  Trusted by 1,200+ Elite Traders
+                  By Giddings Capital Management
                 </span>
               </div>
 
@@ -244,7 +230,7 @@ export default function Home() {
 
               {/* Value Proposition */}
               <p className="text-xl md:text-2xl text-muted-foreground/90 mb-10 leading-relaxed max-w-2xl animate-in fade-in slide-in-from-bottom-8 duration-1000 delay-200">
-                Stop blowing funded accounts. Use <span className="text-foreground font-semibold">Monte Carlo simulations</span> and <span className="text-foreground font-semibold">real broker data</span> to validate your strategy edge. Join 1,200+ traders who passed with FoldForge.
+                Stop blowing funded accounts. Use <span className="text-foreground font-semibold">Monte Carlo simulations</span> and <span className="text-foreground font-semibold">real broker data</span> to validate your strategy edge. Find the breaking point before your funded account does.
               </p>
 
               {/* CTA Group */}
@@ -322,8 +308,8 @@ export default function Home() {
                       <BarChart3 size={18} className="text-primary" />
                       <span className="text-[10px] font-black text-primary uppercase tracking-widest">Monte Carlo Run</span>
                     </div>
-                    <div className="text-lg font-bold text-white">94.2% Success Rate</div>
-                    <div className="text-[10px] text-muted-foreground mt-1">Based on 10,000 iterations</div>
+                    <div className="text-lg font-bold text-white">10,000 iterations</div>
+                    <div className="text-[10px] text-muted-foreground mt-1">Sample studio view</div>
                   </div>
 
                   <div className="absolute top-1/4 -right-8 bg-black/90 border border-blue-500/40 rounded-xl p-4 backdrop-blur-md shadow-2xl animate-float-delayed">
@@ -331,7 +317,7 @@ export default function Home() {
                       <Database size={16} className="text-blue-400" />
                       <span className="text-[10px] font-black text-blue-400 uppercase tracking-widest">Broker Sync</span>
                     </div>
-                    <div className="text-sm font-bold text-white">Spread Accuracy: 99.9%</div>
+                    <div className="text-sm font-bold text-white">Your broker's real spreads</div>
                   </div>
                 </div>
 
@@ -717,43 +703,30 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials - Enhanced with Specificity */}
+      {/* Track record & early users */}
       <section className="py-20 border-b border-border/50">
         <div className="container">
           <div className="text-center mb-14">
-            <h2 className="text-3xl md:text-4xl font-bold font-['Playfair_Display'] mb-4">Real Results from <span className="gold-text">Real Traders</span></h2>
-            <p className="text-muted-foreground max-w-xl mx-auto">Specific metrics. Real outcomes. Here's what 1,200+ traders have achieved with FoldForge.</p>
-            <div className="flex justify-center gap-8 mt-6 text-sm text-muted-foreground/70">
-              <div className="flex items-center gap-2"><span className="text-lg font-bold text-primary">$50M+</span> Capital Protected</div>
-              <div className="flex items-center gap-2"><span className="text-lg font-bold text-primary">4.9/5</span> Average Rating</div>
-              <div className="flex items-center gap-2"><span className="text-lg font-bold text-primary">99.9%</span> Uptime SLA</div>
-            </div>
+            <h2 className="text-3xl md:text-4xl font-bold font-['Playfair_Display'] mb-4">Built and used by <span className="gold-text">a trading firm</span></h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">FoldForge is made by Giddings Capital Management, which runs its own expert advisors on live accounts and tests every change in the studio first.</p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {TESTIMONIALS.map((t, i) => (
-              <div key={i} className="glass-card rounded-xl p-6 border-border/50 hover:border-primary/30 transition-all">
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center gap-1">
-                    {[...Array(t.rating)].map((_, i) => (
-                      <Star key={i} size={14} className="text-yellow-500 fill-yellow-500" />
-                    ))}
-                  </div>
-                  <div className="px-2.5 py-1 rounded-full bg-primary/10 border border-primary/20 text-xs font-bold text-primary">
-                    {t.metric}
-                  </div>
-                </div>
-                <p className="text-foreground/90 italic mb-6 leading-relaxed">"{t.text}"</p>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center text-xs font-bold text-primary">
-                    {t.avatar}
-                  </div>
-                  <div>
-                    <div className="text-sm font-bold">{t.name}</div>
-                    <div className="text-[10px] text-muted-foreground uppercase tracking-wider">{t.role}</div>
-                  </div>
-                </div>
-              </div>
-            ))}
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="glass-card rounded-xl p-6 border-border/50">
+              <div className="text-xs font-bold text-primary mb-3">Coming soon</div>
+              <h3 className="text-lg font-bold mb-2">Verified track record</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">We're connecting our live accounts to a third-party verification service. Every result will be published, good or bad.</p>
+            </div>
+            <div className="glass-card rounded-xl p-6 border-border/50">
+              <div className="text-xs font-bold text-primary mb-3">Early access</div>
+              <h3 className="text-lg font-bold mb-2">Founder support</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">You'll talk to the people who built the studio. Questions about a test result get an answer from someone who trades.</p>
+            </div>
+            <div className="glass-card rounded-xl p-6 border-border/50">
+              <div className="text-xs font-bold text-primary mb-3">Share your results</div>
+              <h3 className="text-lg font-bold mb-2">Passed a challenge with FoldForge?</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed mb-3">Tell us what the studio caught. With your permission, we'll feature your story here.</p>
+              <a href="mailto:support@foldforge.com?subject=My%20FoldForge%20results" className="text-sm font-bold text-primary hover:underline">Send your story</a>
+            </div>
           </div>
         </div>
       </section>
@@ -798,7 +771,7 @@ export default function Home() {
         <div className="container relative z-10 text-center">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-4xl md:text-6xl font-bold font-['Playfair_Display'] mb-8">Stop Guessing. <span className="gold-text">Start Stress Testing.</span></h2>
-            <p className="text-xl text-muted-foreground mb-12 leading-relaxed">Join 1,200+ traders who use FoldForge to protect their capital and validate their strategies.</p>
+            <p className="text-xl text-muted-foreground mb-12 leading-relaxed">Test your expert advisor the way a trading firm does, before it trades your capital.</p>
             <Link href="/pricing" onClick={() => trackCTAClick("Get Started Now", "final_cta")}>
               <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 h-16 px-12 text-xl font-bold shadow-2xl shadow-primary/20">
                 Get Started Now <ArrowRight size={22} className="ml-2" />

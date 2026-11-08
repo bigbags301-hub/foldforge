@@ -56,18 +56,16 @@ export default function EAStressTesting() {
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/5 mb-8">
               <Activity size={14} className="text-primary" />
-              <span className="text-xs font-medium text-primary">#1 EA Stress Testing Platform — Trusted by 1,200+ Traders</span>
+              <span className="text-xs font-medium text-primary">EA Stress Testing for MetaTrader 5</span>
             </div>
             <h1 className="text-4xl md:text-6xl font-bold font-['Playfair_Display'] leading-tight mb-6">
-              The World's Most Advanced <span className="gold-text">EA Stress Testing</span> Studio
+              Find Where Your EA Breaks, <span className="gold-text">Before the Market Does</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-6 leading-relaxed">
-              Upload any MQ5 Expert Advisor. Run Monte Carlo simulations, walk-forward analysis, 20+ stress scenarios, and AI-powered code review. 40+ institutional-grade metrics. The definitive EA validation platform.
+              Upload any MQ5 Expert Advisor. Run Monte Carlo simulations, walk-forward analysis, 20+ stress scenarios, and AI-powered code review. 40+ institutional-grade metrics.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-6 mb-10 text-sm text-muted-foreground">
-              <div className="flex items-center gap-1.5"><Users size={14} className="text-primary" /> 1,247 active traders</div>
-              <div className="flex items-center gap-1.5"><Star size={14} className="text-yellow-500 fill-yellow-500" /> 4.9/5 rating</div>
-              <div className="flex items-center gap-1.5"><Shield size={14} className="text-primary" /> $50M+ capital protected</div>
+                                          <div className="flex items-center gap-1.5"><Shield size={14} className="text-primary" /> 7-day free trial</div>
               <div className="flex items-center gap-1.5"><FileCode size={14} className="text-primary" /> Any MQ5 file supported</div>
             </div>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -320,43 +318,6 @@ export default function EAStressTesting() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-20 border-t border-border/50">
-        <div className="container">
-          <div className="text-center mb-14">
-            <h2 className="text-3xl md:text-4xl font-bold font-['Playfair_Display'] mb-4">What <span className="gold-text">Traders Say</span></h2>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              { name: "Marcus T.", role: "Prop Firm Trader", text: "FoldForge's stress testing caught a critical flaw in my EA that would have blown my $250K funded account. The Monte Carlo analysis showed a 40% probability of hitting the daily drawdown limit — something a simple backtest never revealed.", metric: "Saved $250K", rating: 5 },
-              { name: "Sarah K.", role: "EA Developer", text: "I use FoldForge to validate every EA before selling it. The walk-forward analysis and AI code review give my customers confidence that my products actually work. My refund rate dropped from 15% to 2%.", metric: "2% refund rate", rating: 5 },
-              { name: "James R.", role: "Fund Manager", text: "We run every strategy through FoldForge before deploying to client accounts. The 40+ metrics and stress testing suite replaced our entire in-house validation process. ROI on subscription: 400%+.", metric: "400% ROI", rating: 5 },
-            ].map((t, i) => (
-              <div key={i} className="glass-card rounded-xl p-6 border-border/50 hover:border-primary/30 transition-all">
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center gap-1">
-                    {[...Array(t.rating)].map((_, j) => (
-                      <Star key={j} size={14} className="text-yellow-500 fill-yellow-500" />
-                    ))}
-                  </div>
-                  <div className="px-2.5 py-1 rounded-full bg-primary/10 border border-primary/20 text-xs font-bold text-primary">{t.metric}</div>
-                </div>
-                <p className="text-sm text-foreground/90 italic mb-6 leading-relaxed">"{t.text}"</p>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center text-xs font-bold text-primary">
-                    {t.name.split(" ").map(n => n[0]).join("")}
-                  </div>
-                  <div>
-                    <div className="text-sm font-bold">{t.name}</div>
-                    <div className="text-[10px] text-muted-foreground uppercase tracking-wider">{t.role}</div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* FAQ */}
       <section className="py-20 border-t border-border/50 bg-secondary/10">
         <div className="container max-w-3xl">
@@ -387,7 +348,7 @@ export default function EAStressTesting() {
         <div className="container relative z-10 text-center">
           <h2 className="text-4xl md:text-5xl font-bold font-['Playfair_Display'] mb-6">Stop Guessing. Start <span className="gold-text">Stress Testing</span>.</h2>
           <p className="text-lg text-muted-foreground max-w-xl mx-auto mb-10 leading-relaxed">
-            Upload any MQ5 Expert Advisor and know its true risk profile in minutes. Join 1,200+ traders protecting $50M+ in capital.
+            Upload any MQ5 Expert Advisor and know its true risk profile in minutes.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
             <Link href="/pricing">

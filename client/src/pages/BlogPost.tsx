@@ -449,17 +449,15 @@ Choose wisely. Trade professionally. Stay funded with FoldForge.
     `
   },
   "how-i-passed-ftmo-in-7-days-with-an-ea": {
-    title: "How I Passed FTMO in 7 Days with an EA (The Exact Strategy)",
+    title: "How to Pass FTMO with an EA: A 7-Day Validation Workflow",
     date: "March 29, 2026",
     readTime: "15 min read",
-    author: "Marcus T.",
+    author: "FoldForge Team",
     category: "Prop Firm",
     icon: Shield,
     image: "/images/blog/blog_post_1.png",
     content: `
-> "I used to think passing a prop firm challenge was 90% luck. Then I discovered FoldForge, and I realized it's 100% science." — Marcus T., Funded Trader
-
-Passing the FTMO challenge is the "Holy Grail" for many retail traders. But in 2026, with tighter rules and more volatile markets, the old "set and forget" EA strategy is a recipe for disaster. This is the exact step-by-step workflow I used to pass my $200K FTMO challenge in just 7 trading days.
+Passing the FTMO challenge is the "Holy Grail" for many retail traders. But in 2026, with tighter rules and more volatile markets, the old "set and forget" EA strategy is a recipe for disaster. Here is a step-by-step workflow for validating an EA and managing risk through a short challenge window.
 
 ### Step 1: The "Death Valley" Validation
 

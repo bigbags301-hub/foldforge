@@ -35,10 +35,10 @@ const posts = [
   },
   {
     slug: "how-i-passed-ftmo-in-7-days-with-an-ea",
-    title: "How I Passed FTMO in 7 Days with an EA (The Exact Strategy)",
-    excerpt: "Discover the exact step-by-step workflow used to pass a $200K FTMO challenge in just 7 trading days using institutional-grade validation and real-time risk management.",
+    title: "How to Pass FTMO with an EA: A 7-Day Validation Workflow",
+    excerpt: "A step-by-step workflow for validating an expert advisor and managing risk through a short FTMO challenge window.",
     date: "March 29, 2026",
-    author: "Marcus T.",
+    author: "FoldForge Team",
     category: "Prop Firm",
     readTime: "15 min read",
     featured: true,

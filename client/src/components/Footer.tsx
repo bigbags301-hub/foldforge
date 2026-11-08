@@ -30,7 +30,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-secondary/50 border border-border/50">
                 <Lock size={12} className="text-primary" />
-                <span className="text-xs text-muted-foreground font-medium">256-bit Encrypted</span>
+                <span className="text-xs text-muted-foreground font-medium">Encrypted connection</span>
               </div>
             </div>
             {/* Contact */}
@@ -38,7 +38,7 @@ export default function Footer() {
               <div className="flex items-start gap-2">
                 <MapPin size={13} className="text-muted-foreground mt-0.5 shrink-0" />
                 <div>
-                  <p className="text-xs text-muted-foreground font-medium">Giddings Capital Management LLC</p>
+                  <a href="/company/" className="text-xs text-muted-foreground font-medium hover:text-primary transition-colors">A product of Giddings Capital Management LLC</a>
                   <p className="text-xs text-muted-foreground">1209 Mountain Road Pl NE Ste N</p>
                   <p className="text-xs text-muted-foreground">Albuquerque, NM 87110 USA</p>
                 </div>

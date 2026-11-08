@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Giddings Capital Management</title>
+<meta name="description" content="Giddings Capital Management builds and stress-tests systematic trading software. Home of FoldForge, the EA stress-testing studio for MetaTrader 5.">
+<meta property="og:title" content="Giddings Capital Management">
+<meta property="og:description" content="We test trading systems until they break, so your capital doesn't. Home of FoldForge.">
+<meta property="og:image" content="assets/logo-wide.png">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Libre+Caslon+Text:ital@0;1&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"Giddings Capital Management LLC","founder":{"@type":"Person","name":"Warren Giddings"},"address":{"@type":"PostalAddress","streetAddress":"1209 Mountain Road Pl NE Ste N","addressLocality":"Albuquerque","addressRegion":"NM","postalCode":"87110","addressCountry":"US"},"sameAs":["https://foldforge.app","https://www.mql5.com/en/users/giddings837"]}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <a class="brand" href="./" aria-label="Giddings Capital Management home"><img src="assets/logo-wide.png" alt="Giddings Capital Management" width="402" height="100"></a>
+  <nav aria-label="Main">
+    <a href="#work">What we build</a>
+    <a href="#record">Track record</a>
+    <a href="#method">Method</a>
+    <a href="#founder">Founder</a>
+    <a class="nav-cta" href="https://foldforge.app" data-track="nav_foldforge">Try FoldForge</a>
+  </nav>
+</header>
+
+<main id="main">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-copy">
+      <h1 id="hero-title">We test trading systems until they break, so your capital doesn't.</h1>
+      <p class="lede">Giddings Capital Management is a systematic trading research firm in New Mexico. We build expert advisors, run them on real money, and make the tools we use to stress-test them.</p>
+      <div class="actions">
+        <a class="btn primary" href="https://foldforge.app" data-track="hero_foldforge">Start a FoldForge trial</a>
+        <a class="btn ghost" href="#work">See what we build</a>
+      </div>
+    </div>
+    <figure class="fan" aria-label="Illustrative Monte Carlo simulation: 60 equity paths from the same strategy, reshuffled">
+      <svg id="fan" viewBox="0 0 600 420" role="img" aria-hidden="true"></svg>
+      <figcaption>Same strategy, 60 reshuffled trade orders. Illustrative simulation, not a track record. The red paths are the three deepest drawdowns. A single backtest shows you one line and none of this spread.</figcaption>
+    </figure>
+  </section>
+
+  <section id="work" class="work" aria-labelledby="work-title">
+    <h2 id="work-title">What we build</h2>
+    <div class="work-grid">
+      <article class="work-item lead">
+        <img src="assets/mark.png" alt="" width="48" height="52">
+        <h3>FoldForge</h3>
+        <p>Our stress-testing studio for MetaTrader 5. Monte Carlo reshuffles, real broker spreads and swaps, and a drawdown guardian that enforces prop-firm rules on a live account.</p>
+        <p class="price">Plans from $19 a month, with a 7-day free trial.</p>
+        <a class="text-link" href="https://foldforge.app" data-track="work_foldforge">Open FoldForge</a>
+      </article>
+      <article class="work-item">
+        <h3>Megaladon research</h3>
+        <p>An in-house machine-learning system that trades gold on the hourly chart, trained on 32 years of data. It runs on our own capital while we validate it. It is not for sale.</p>
+      </article>
+      <article class="work-item">
+        <h3>Education</h3>
+        <p>Walkthroughs of how we validate an EA, what our live account is doing and why, and the mistakes that cost us money. Free, on the FoldForge Academy and our channel.</p>
+        <a class="text-link" href="https://foldforge.app" data-track="work_academy">Visit the Academy</a>
+      </article>
+    </div>
+  </section>
+
+  <section id="record" class="record" aria-labelledby="record-title">
+    <div class="record-head">
+      <h2 id="record-title">Verified track record, coming soon</h2>
+      <p>Most EA sellers show you a backtest. We are connecting our live accounts to an independent verification service, so the numbers come straight from the broker and not from us. When it goes live, every result will be here, good or bad.</p>
+    </div>
+    <div class="soon">
+      <p class="pull">A high win rate means nothing if the average loss is bigger than the average win. That is the first thing we check, in our own accounts and in FoldForge.</p>
+      <div>
+        <p>Want to know when the record is published?</p>
+        <a class="btn primary" href="mailto:support@foldforge.com?subject=Notify%20me%3A%20Giddings%20track%20record" data-track="record_notify">Email me when it's live</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="method" class="method" aria-labelledby="method-title">
+    <h2 id="method-title">How a system earns real money here</h2>
+    <ol class="steps">
+      <li><h3>Write the rule down</h3><p>Every strategy starts as a plain-language hypothesis with entry, exit and risk defined before any optimisation.</p></li>
+      <li><h3>Break it on purpose</h3><p>Monte Carlo reshuffles, spread and slippage shocks, and parameter sweeps in FoldForge. If it only works on one ordering of history, it doesn't ship.</p></li>
+      <li><h3>Trade it small, live</h3><p>The smallest size the broker allows, on a real account, until live fills match the test within tolerance.</p></li>
+      <li><h3>Scale on evidence</h3><p>Risk rises only as the live record earns it, and every result is published, good or bad.</p></li>
+    </ol>
+  </section>
+
+  <section id="founder" class="founder" aria-labelledby="founder-title">
+    <div>
+      <h2 id="founder-title">Warren Giddings, founder</h2>
+      <p>Warren came to systematic trading through the MetaTrader 5 Strategy Tester, running genetic optimisations over thousands of passes and learning the hard way how easily they curve-fit. FoldForge is the tool he wanted then: one that tells you how a strategy fails before the market does.</p>
+      <p>He builds and trades the firm's systems himself and publishes his work on <a href="https://www.mql5.com/en/users/giddings837">MQL5</a>.</p>
+    </div>
+  </section>
+
+  <section id="contact" class="contact" aria-labelledby="contact-title">
+    <h2 id="contact-title">Talk to us</h2>
+    <p>Questions about FoldForge, partnerships or press.</p>
+    <div class="contact-lines">
+      <a href="mailto:support@foldforge.com" data-track="contact_email">support@foldforge.com</a>
+      <a href="tel:+15052301932" data-track="contact_phone">(505) 230-1932</a>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <p>Giddings Capital Management LLC. Registered in New Mexico. 1209 Mountain Road Pl NE Ste N, Albuquerque, NM 87110.</p>
+  <p>Trading foreign exchange and commodities on margin carries a high level of risk and may not be suitable for all investors. You can lose more than you deposit. Nothing on this site is investment advice, a solicitation, or an offer to manage money. FoldForge is software and does not provide financial advice.</p>
+  <p>© <span id="yr">2026</span> Giddings Capital Management LLC</p>
+</footer>
+<script src="script.js" defer></script>
+</body>
+</html>

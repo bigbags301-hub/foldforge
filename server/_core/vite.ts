@@ -59,6 +59,26 @@ export function serveStatic(app: Express) {
     );
   }
 
+  // Giddings Capital Management company site (static, lives in /giddings-site).
+  // Served at /company, and at the root for any host listed in COMPANY_SITE_HOSTS
+  // (comma-separated, e.g. "giddingscapital.com,www.giddingscapital.com").
+  const companyPath = path.resolve(process.cwd(), "giddings-site");
+  if (fs.existsSync(companyPath)) {
+    const companyStatic = express.static(companyPath);
+    const companyHosts = (process.env.COMPANY_SITE_HOSTS || "")
+      .split(",")
+      .map(h => h.trim().toLowerCase())
+      .filter(Boolean);
+    app.use((req, res, next) => {
+      const host = (req.hostname || "").toLowerCase();
+      if (companyHosts.includes(host) && !req.path.startsWith("/api")) {
+        return companyStatic(req, res, next);
+      }
+      next();
+    });
+    app.use("/company", companyStatic);
+  }
+
   app.use(express.static(distPath));
 
   // fall through to index.html if the file doesn't exist

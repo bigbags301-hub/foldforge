@@ -73,3 +73,21 @@ services:
 
       - key: BUILT_IN_FORGE_API_KEY
         sync: false
+
+  # ── Giddings Capital Management company site (static) ─────────
+  - type: web
+    name: giddings-capital
+    runtime: static
+    rootDir: giddings-site
+    buildCommand: ""
+    staticPublishPath: .
+    headers:
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: Referrer-Policy
+        value: strict-origin-when-cross-origin
+      - path: /*
+        name: X-Frame-Options
+        value: DENY

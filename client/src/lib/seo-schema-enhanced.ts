@@ -62,13 +62,6 @@ export function generateProductSchema() {
       "highPrice": "79",
       "offerCount": "3"
     },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "ratingCount": "1200",
-      "bestRating": "5",
-      "worstRating": "1"
-    },
     "author": {
       "@id": "https://foldforge.app/#organization"
     }

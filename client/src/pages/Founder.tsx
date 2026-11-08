@@ -14,7 +14,7 @@ export default function Founder() {
   const schema = {
     "@type": "Person",
     "name": "Warren Giddings",
-    "title": "Founder & Chief Investment Officer",
+    "title": "Founder, Giddings Capital Management",
     "description": "Founder of FoldForge and Giddings Capital Management. 15+ years in quantitative trading and risk management.",
     "url": "https://foldforge.app/founder",
     "image": "https://foldforge.app/images/quant-warren-founder.webp",
@@ -29,7 +29,7 @@ export default function Founder() {
     <div className="min-h-screen bg-background text-foreground">
       <SEO
         title="Warren Giddings - Founder of FoldForge | Quantitative Trading Expert"
-        description="Meet Warren Giddings, founder of FoldForge and Giddings Capital Management. 15+ years in quantitative trading, $50M+ AUM, empowering 1,200+ traders with institutional-grade EA validation tools."
+        description="Meet Warren Giddings, founder of FoldForge and Giddings Capital Management. A systematic trader who builds and stress-tests expert advisors, and made FoldForge to do it properly."
         canonical="https://foldforge.app/founder"
         breadcrumbs={breadcrumbs}
         schema={schema}
@@ -107,7 +107,7 @@ export default function Founder() {
               </div>
               <h3 className="text-xl font-bold mb-4">Internal Validation</h3>
               <p className="text-muted-foreground">
-                What began as an internal risk management tool for Giddings Capital's own $50M+ AUM operations has now been democratized for serious traders.
+                FoldForge began as the internal tool Giddings Capital uses to test its own expert advisors before they trade real money.
               </p>
             </div>
             
@@ -145,31 +145,7 @@ export default function Founder() {
             </blockquote>
             <div className="w-12 h-1 bg-primary mx-auto mb-6"></div>
             <p className="font-bold text-lg">Warren Giddings</p>
-            <p className="text-muted-foreground text-sm uppercase tracking-widest">Founder & Chief Investment Officer</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Career Stats */}
-      <section className="py-20 border-t border-border/50">
-        <div className="container">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div className="text-center">
-              <p className="text-4xl font-bold gold-text mb-2">15+</p>
-              <p className="text-sm text-muted-foreground uppercase tracking-wider">Years in Markets</p>
-            </div>
-            <div className="text-center">
-              <p className="text-4xl font-bold gold-text mb-2">$50M+</p>
-              <p className="text-sm text-muted-foreground uppercase tracking-wider">Assets Managed</p>
-            </div>
-            <div className="text-center">
-              <p className="text-4xl font-bold gold-text mb-2">1,200+</p>
-              <p className="text-sm text-muted-foreground uppercase tracking-wider">Traders Empowered</p>
-            </div>
-            <div className="text-center">
-              <p className="text-4xl font-bold gold-text mb-2">172+</p>
-              <p className="text-sm text-muted-foreground uppercase tracking-wider">Symbols Covered</p>
-            </div>
+            <p className="text-muted-foreground text-sm uppercase tracking-widest">Founder, Giddings Capital Management</p>
           </div>
         </div>
       </section>
