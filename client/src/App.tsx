@@ -40,6 +40,7 @@ const Success = lazyRetry(() => import("./pages/Success"), "Success");
 const NotFound = lazyRetry(() => import("./pages/NotFound"), "NotFound");
 const Founder = lazyRetry(() => import("./pages/Founder"), "Founder");
 const Academy = lazyRetry(() => import("./pages/Academy"), "Academy");
+const PropFirmPassCalculator = lazyRetry(() => import("./pages/PropFirmPassCalculator"), "PropFirmPassCalculator");
 
 function PageLoader() {
   return (
@@ -80,6 +81,7 @@ function Router() {
         <Route path="/automated-trading-platform" component={AutomatedTradingPlatform} />
         <Route path="/expert-advisor-builder" component={ExpertAdvisorBuilder} />
         <Route path="/metatrader-risk-management-tool" component={MetatraderRiskManagementTool} />
+        <Route path="/prop-firm-pass-calculator" component={PropFirmPassCalculator} />
         <Route path="/ea-stress-testing" component={EAStressTesting} />
         <Route path="/monte-carlo-simulation-ea" component={MonteCarloSimulationEA} />
         <Route path="/walk-forward-analysis-mt5" component={WalkForwardAnalysisMT5} />

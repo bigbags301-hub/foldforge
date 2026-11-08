@@ -54,7 +54,7 @@ export default function Signup() {
           <div className="text-center mb-8">
             <img src={LOGO_URL} alt="FoldForge" className="w-16 h-16 rounded-xl mx-auto mb-4" />
             <h1 className="text-2xl font-bold font-['Playfair_Display']">Start Your 7-Day Free Trial</h1>
-            <p className="text-muted-foreground text-sm mt-1">No credit card required. Full access to all features.</p>
+            <p className="text-muted-foreground text-sm mt-1">7-day free trial with full access to all features.</p>
             <div className="flex items-center justify-center gap-4 mt-6 text-xs text-muted-foreground">
               <div className={`flex items-center gap-1 ${step === 'email' ? 'text-primary font-bold' : ''}`}>
                 <div className={`w-6 h-6 rounded-full flex items-center justify-center ${step === 'email' ? 'bg-primary text-white' : 'bg-secondary'}`}>1</div>

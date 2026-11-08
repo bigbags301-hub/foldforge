@@ -80,7 +80,7 @@ export default function EAStressTesting() {
                 </Button>
               </Link>
             </div>
-            <p className="text-xs text-muted-foreground mt-4">No credit card required &middot; 7-day free trial &middot; Cancel anytime</p>
+            <p className="text-xs text-muted-foreground mt-4">7-day free trial &middot; $0 today &middot; Cancel anytime</p>
           </div>
         </div>
       </section>
@@ -331,7 +331,7 @@ export default function EAStressTesting() {
               { q: "What metrics does FoldForge calculate?", a: "FoldForge calculates 40+ institutional-grade metrics including Sharpe Ratio, Sortino Ratio, Calmar Ratio, Profit Factor, Expectancy, Kelly Percentage, VaR, CVaR, Ulcer Index, Z-Score, Skewness, Kurtosis, and many more." },
               { q: "Can I test any Expert Advisor?", a: "Yes. FoldForge's advanced parser handles any MQ5 file regardless of complexity — all parameter types, custom enums, classes, structs, macros, and nested includes. Grid EAs, martingale EAs, scalpers, trend followers — all supported." },
               { q: "How does the AI code review work?", a: "Upload your MQ5 file and our AI engine analyzes the code structure, risk management, entry/exit logic, error handling, and performance. You receive specific MQ5 code suggestions with before/after examples that you can copy-paste into your EA." },
-              { q: "Is there a free trial?", a: "Yes! All plans include a 7-day free trial with full access to all features including Monte Carlo, walk-forward, stress testing, and AI code review. No credit card required." },
+              { q: "Is there a free trial?", a: "Yes! All plans include a 7-day free trial with full access to all features including Monte Carlo, walk-forward, stress testing, and AI code review. You pay $0 today and are only charged if you keep it past day 7." },
             ].map((faq, i) => (
               <div key={i} className="glass-card rounded-xl border-border/50 p-6">
                 <h3 className="font-semibold mb-2">{faq.q}</h3>
@@ -362,7 +362,7 @@ export default function EAStressTesting() {
               </Button>
             </Link>
           </div>
-          <p className="text-xs text-muted-foreground">No credit card required &middot; 7-day free trial &middot; Cancel anytime</p>
+          <p className="text-xs text-muted-foreground">7-day free trial &middot; $0 today &middot; Cancel anytime</p>
         </div>
       </section>
 

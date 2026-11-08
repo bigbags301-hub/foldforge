@@ -81,7 +81,7 @@ const FAQS = [
   { q: "What is the Funded Account Guardian?", a: "The Funded Account Guardian monitors your prop firm account in real-time, enforcing drawdown limits and position sizing rules to prevent catastrophic losses. It works with FTMO, MyForexFunds, The5ers, Topstep, and all major prop firms." },
   { q: "Is my trading data secure?", a: "Yes. All data is encrypted in transit. We never share your trading data with third parties. Your broker credentials never touch our servers — only the data-pulling EA communicates with your platform." },
   { q: "What prop firms does FoldForge support?", a: "FoldForge is compatible with all major prop firms including FTMO, MyForexFunds, The5ers, Topstep, Funded Engineer, E8 Funding, True Forex Funds, and any firm using MetaTrader 4 or 5." },
-  { q: "Is there a free trial?", a: "Yes! All plans include a 7-day free trial with full access to all features. No credit card required to start. You can upgrade, downgrade, or cancel at any time." },
+  { q: "Is there a free trial?", a: "Yes. Every plan starts with a 7-day free trial and full access. You add a card at checkout but pay $0 today; cancel before day 7 and you're never charged. You can upgrade, downgrade, or cancel at any time." },
 ];
 
 
@@ -190,8 +190,8 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-black text-foreground selection:bg-primary/30">
       <SEO 
-        title="FoldForge — Pass Any Prop Firm Challenge with #1 EA Stress Testing Studio"
-        description="Stop blowing funded accounts. FoldForge is the #1 EA stress testing studio for MT4/MT5. Pass FTMO, The5ers, and Topstep with Monte Carlo simulations and AI risk management."
+        title="FoldForge — EA Stress Testing Studio for Prop Firm Traders"
+        description="Stop blowing funded accounts. FoldForge is an EA stress testing studio for MT4/MT5. Pass FTMO, The5ers, and Topstep with Monte Carlo simulations and AI risk management."
         schema={generateHomepageSchema()}
       />
       <Navbar />
@@ -256,7 +256,7 @@ export default function Home() {
                   <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center">
                     <CheckCircle2 size={14} className="text-primary" />
                   </div>
-                  <span className="font-medium">No Credit Card. Cancel Anytime.</span>
+                  <span className="font-medium">$0 Today. Cancel Anytime.</span>
                 </div>
                 <div className="flex items-center gap-2.5">
                   <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center">
@@ -268,9 +268,15 @@ export default function Home() {
                   <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center">
                     <CheckCircle2 size={14} className="text-primary" />
                   </div>
-                  <span className="font-medium">256-bit Encrypted</span>
+                  <span className="font-medium">Built by a Trading Firm</span>
                 </div>
               </div>
+              <p className="mt-6 text-sm text-muted-foreground">
+                Not ready for a trial?{" "}
+                <Link href={getLink("/prop-firm-pass-calculator")} className="text-primary font-semibold hover:underline" onClick={() => trackCTAClick("Pass Calculator", "hero_section")}>
+                  Check your odds of passing a challenge, free
+                </Link>
+              </p>
             </div>
 
             {/* Visual Showcase - Ultra Professional Dashboard Preview */}
@@ -661,7 +667,7 @@ export default function Home() {
         <div className="container">
           <div className="text-center mb-14">
             <h2 className="text-3xl md:text-4xl font-bold font-['Playfair_Display'] mb-4">Simple, Transparent <span className="gold-text">Pricing</span></h2>
-            <p className="text-muted-foreground max-w-xl mx-auto mb-4">7-day free trial. No credit card required. Cancel anytime.</p>
+            <p className="text-muted-foreground max-w-xl mx-auto mb-4">7-day free trial, $0 today. Cancel before day 7 and you pay nothing.</p>
           </div>
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {PLANS.map((plan, i) => (
@@ -777,7 +783,7 @@ export default function Home() {
                 Get Started Now <ArrowRight size={22} className="ml-2" />
               </Button>
             </Link>
-            <p className="mt-6 text-sm text-muted-foreground/60 font-medium">No credit card required • 7-day free trial • Cancel anytime</p>
+            <p className="mt-6 text-sm text-muted-foreground/60 font-medium">7-day free trial • $0 today • Cancel before day 7 and pay nothing</p>
           </div>
         </div>
       </section>

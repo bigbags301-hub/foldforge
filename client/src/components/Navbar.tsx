@@ -75,6 +75,7 @@ export default function Navbar() {
             </button>
             <div className="absolute top-full left-0 mt-3 w-64 rounded-xl border border-border/60 bg-background/95 backdrop-blur-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 p-2">
               {[
+                { title: "Free Pass Calculator", href: "/prop-firm-pass-calculator", desc: "Your odds of passing a challenge" },
                 { title: "EA Stress Testing", href: "/ea-stress-testing", desc: "Monte Carlo & Stress Scenarios" },
                 { title: "Monte Carlo Simulation", href: "/monte-carlo-simulation-ea", desc: "Statistical Edge Validation" },
                 { title: "Walk-Forward Analysis", href: "/walk-forward-analysis-mt5", desc: "Overfitting Detection" },

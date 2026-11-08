@@ -36,7 +36,7 @@ export default function WalkForwardAnalysisMT5() {
                 </Button>
               </Link>
             </div>
-            <p className="text-xs text-muted-foreground mt-4">No credit card required &middot; 7-day free trial &middot; Upload any MQ5 file</p>
+            <p className="text-xs text-muted-foreground mt-4">7-day free trial &middot; $0 today &middot; Upload any MQ5 file</p>
           </div>
         </div>
       </section>
@@ -156,7 +156,7 @@ export default function WalkForwardAnalysisMT5() {
               Start Free Trial <ArrowRight size={20} className="ml-2" />
             </Button>
           </Link>
-          <p className="text-xs text-muted-foreground mt-4">No credit card required &middot; 7-day free trial &middot; Cancel anytime</p>
+          <p className="text-xs text-muted-foreground mt-4">7-day free trial &middot; $0 today &middot; Cancel anytime</p>
         </div>
       </section>
 

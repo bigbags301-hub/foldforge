@@ -77,45 +77,10 @@ export default function Pricing() {
               Choose Your <span className="gold-text">Trading Edge</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-              All plans include a 7-day free trial. Start your trial today and cancel anytime.
+              Every plan starts with a 7-day free trial. You pay $0 today, and if you cancel before day 7 you are never charged.
             </p>
             
-            {/* Billing Toggle */}
-            <div className="flex items-center justify-center gap-4 mb-8">
-              <button
-                onClick={() => {
-                  trackCTAClick("Billing Cycle", "pricing_page", "monthly");
-                  setBillingCycle('monthly');
-                }}
-                className={`px-6 py-2 rounded-lg font-semibold transition-all ${
-                  billingCycle === 'monthly'
-                    ? 'bg-primary text-primary-foreground'
-                    : 'bg-secondary text-foreground hover:bg-secondary/80'
-                }`}
-              >
-                Billed Monthly
-              </button>
-              <button
-                onClick={() => {
-                  trackCTAClick("Billing Cycle", "pricing_page", "annual");
-                  setBillingCycle('annual');
-                }}
-                className={`px-6 py-2 rounded-lg font-semibold transition-all relative ${
-                  billingCycle === 'annual'
-                    ? 'bg-primary text-primary-foreground'
-                    : 'bg-secondary text-foreground hover:bg-secondary/80'
-                }`}
-              >
-                Billed Annually
-                {billingCycle === 'annual' && (
-                  <span className="absolute -top-8 left-1/2 -translate-x-1/2 bg-green-500 text-white text-xs font-bold px-2 py-1 rounded whitespace-nowrap">
-                    Save 15%
-                  </span>
-                )}
-              </button>
-            </div>
           </div>
-
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {PLANS.map((plan, i) => (
               <div key={i} className={`rounded-2xl p-8 border ${plan.popular ? "border-primary bg-primary/5 relative shadow-lg shadow-primary/10" : "border-border glass-card"}`}>

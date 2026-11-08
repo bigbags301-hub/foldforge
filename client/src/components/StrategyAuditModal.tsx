@@ -53,7 +53,7 @@ export default function StrategyAuditModal({ isOpen, onClose }: StrategyAuditMod
             </div>
             <h2 className="text-2xl font-bold font-['Playfair_Display'] mb-4">Free Strategy Audit</h2>
             <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
-              Get a professional risk assessment of your Expert Advisor. Our team will analyze your strategy's drawdown profile and prop firm compatibility.
+              Send us your EA's backtest report and Warren Giddings, FoldForge's founder, will review its drawdown profile and prop firm fit personally.
             </p>
             <div className="space-y-3">
               {[
@@ -78,7 +78,7 @@ export default function StrategyAuditModal({ isOpen, onClose }: StrategyAuditMod
                 </div>
                 <h3 className="text-xl font-bold mb-2">Request Received!</h3>
                 <p className="text-sm text-muted-foreground mb-6">
-                  Our analysts will reach out to you within 24 hours to begin your audit.
+                  Warren will email you within one business day with where to send your backtest report.
                 </p>
                 <Button onClick={onClose} className="w-full">Close</Button>
               </div>
@@ -86,7 +86,7 @@ export default function StrategyAuditModal({ isOpen, onClose }: StrategyAuditMod
               <>
                 <h3 className="text-lg font-bold mb-2">Secure Your Audit Slot</h3>
                 <p className="text-xs text-muted-foreground mb-6">
-                  Limited to 5 audits per week to ensure institutional-grade quality.
+                  Each audit is done by hand, so we take a few each week.
                 </p>
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="space-y-2">

@@ -136,7 +136,7 @@ export default function FundedAccountRiskManagement() {
           <div className="max-w-3xl mx-auto glass-card p-12 rounded-3xl border-primary/20">
             <h2 className="text-3xl md:text-4xl font-bold font-['Playfair_Display'] mb-6">Ready to Secure Your <span className="gold-text">Trading Future</span>?</h2>
             <p className="text-muted-foreground mb-10">
-              Join thousands of traders who use FoldForge to maintain discipline and protect their funded accounts.
+              Use the same risk rules your prop firm enforces, automatically, on every trade.
             </p>
             <Link href="/pricing">
               <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 px-12 h-14 text-lg font-bold">

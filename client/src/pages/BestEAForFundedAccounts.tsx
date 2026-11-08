@@ -173,7 +173,7 @@ export default function BestEAForFundedAccounts() {
               Start Free Trial <ArrowRight size={20} className="ml-2" />
             </Button>
           </Link>
-          <p className="text-xs text-muted-foreground mt-4">No credit card required &middot; 7-day free trial &middot; Cancel anytime</p>
+          <p className="text-xs text-muted-foreground mt-4">7-day free trial &middot; $0 today &middot; Cancel anytime</p>
         </div>
       </section>
 

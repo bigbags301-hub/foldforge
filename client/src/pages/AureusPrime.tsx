@@ -274,7 +274,7 @@ export default function AureusPrime() {
             Ready to Trade with <span className="gold-text">Aureus Prime</span>?
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto mb-8">
-            Get 7 days free access to Aureus Prime EA, the testing studio, and real-time drawdown protection. No credit card required.
+            Get 7 days free access to Aureus Prime EA, the testing studio, and real-time drawdown protection. $0 today, cancel anytime before day 7.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/pricing">
