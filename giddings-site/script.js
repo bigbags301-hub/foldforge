@@ -29,5 +29,5 @@
   var lab=el('text',{x:P,y:22,fill:'#a9b2bd','font-size':'13','font-family':'Instrument Sans, sans-serif'});
   lab.textContent='Equity, 60 reshuffles of the same 120 trades';svg.appendChild(lab);
   // Lightweight click tracking hook (wire to analytics once an account exists)
-  document.addEventListener('click',function(e){var a=e.target.closest('[data-track]');if(a&&window.plausible)window.plausible(a.dataset.track);});
+  document.addEventListener('click',function(e){var a=e.target.closest('[data-track]');if(a&&window.gtag)window.gtag('event','cta_click',{cta:a.dataset.track,site:'giddings_capital'});});
 })();
